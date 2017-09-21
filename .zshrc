@@ -91,4 +91,4 @@ source $ZSH/oh-my-zsh.sh
 PURE_PROMPT_SYMBOL="λ"
 prompt pure
 alias config='/usr/bin/git --git-dir=/root/.cfg/ --work-tree=/root'
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Cmder/vendor/conemu-maximus5/ConEmu/Scripts:/mnt/c/Program Files/Cmder/vendor/conemu-maximus5:/mnt/c/Program Files/Cmder/vendor/conemu-maximus5/ConEmu:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/mnt/c/Program Files/dotnet:/mnt/d/Users/greg/scoop/shims:/mnt/d/Users/greg/AppData/Local/Microsoft/WindowsApps:/mnt/d/Program Files/Microsoft VS Code/bin:/mnt/c/Windows/System32
+export PATH=$PATH:/mnt/c/Windows/System32
