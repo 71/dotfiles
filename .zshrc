@@ -90,5 +90,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 PURE_PROMPT_SYMBOL="λ"
 prompt pure
+
 alias config='/usr/bin/git --git-dir=/root/.cfg/ --work-tree=/root'
 export PATH=$PATH:/mnt/c/Windows/System32
+
+source $HOME/.profile
