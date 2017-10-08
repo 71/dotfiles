@@ -25,3 +25,8 @@ export PATH=$PATH:/mnt/c/Windows/System32
 alias config='/usr/bin/git --git-dir=/root/.cfg/ --work-tree=/root'
 
 source $HOME/.profile
+source $HOME/.machine
+
+\cp -rf $SSH_SHARED_DIR $HOME
+chmod 600 $HOME/.ssh/id_rsa
+chmod 600 $HOME/.ssh/id_rsa.pub
