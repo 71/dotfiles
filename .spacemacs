@@ -36,6 +36,7 @@ values."
      ocaml
      shell
      racer
+     merlin
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -314,8 +315,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq scroll-margin 4)
-  (setq smooth-scroll-margin 4)
+  (setq scroll-margin 8)
+  (setq smooth-scroll-margin 8)
   (spacemacs|defvar-company-backends rust-mode)
   (add-hook 'rust-mode-hook #'racer-mode)
   (add-hook 'racer-mode-hook #'eldoc-mode)
@@ -323,6 +324,8 @@ you should place your code here."
   (require 'rust-mode)
   (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
   (setq company-tooltip-align-annotations t)
+
+  (setq merlin-command 'opam)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

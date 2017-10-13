@@ -14,3 +14,8 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 
+# Disable 'running as root' warning in OPAM.
+mv /usr/bin/opam /usr/bin/opam-unsafe
+echo "#!/bin/bash">/usr/bin/opam
+echo "opam-unsafe --safe \$@">>/usr/bin/opam
+chmod +x /usr/bin/opam
