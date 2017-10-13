@@ -31,16 +31,18 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     javascript
      rust
      ocaml
      shell
+     racer
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      ;; git
@@ -312,8 +314,15 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq scroll-margin 1)
-  (setq smooth-scroll-margin 1)
+  (setq scroll-margin 4)
+  (setq smooth-scroll-margin 4)
+  (spacemacs|defvar-company-backends rust-mode)
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+
+  (require 'rust-mode)
+  (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+  (setq company-tooltip-align-annotations t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
