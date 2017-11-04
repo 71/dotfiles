@@ -1,3 +1,4 @@
+" Plugins
 set nocompatible
 filetype off
 
@@ -6,29 +7,25 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/deoplete'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rust-lang/rust.vim'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'neomake/neomake'
 Plugin 'baabelfish/nvim-nim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'junegunn/fzf'
+Plugin 'shougo/denite.nvim'
+Plugin 'w0rp/ale'
+Plugin 'sebastianmarkow/deoplete-rust'
 
 call vundle#end()
+
 filetype plugin indent on
 
-set autoindent
-set backspace=indent,eol,start
-set complete-=i
-
-set scrolloff=4
-set sidescrolloff=5
-
-set formatoptions+=j
-set number
-
 set history=1000
-set expandtab tabstop=2 shiftwidth=2 softtabstop=0 smarttab
+
+" Plugin Config
+let g:deoplete#sources#rust#racer_binary=system('which racer')
+let g:deoplete#sources#rust#rust_source_path=system('rustc --print sysroot') + '/lib/rustlib/src/rust/src'
