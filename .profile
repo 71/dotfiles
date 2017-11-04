@@ -8,7 +8,7 @@ fi
 
 mesg n || true
 
-export PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:/usr/etc/nim/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:/usr/etc/nim/bin:$HOME/termite:$PATH"
 source ~/.cargo/env
 
 # OPAM configuration
