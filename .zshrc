@@ -18,7 +18,7 @@ PURE_PROMPT_SYMBOL="λ"
 prompt pure
 
 # Miscellaneous config:
-export EDITOR='emacs'
+export EDITOR='nvim'
 export DISPLAY=:0
 export PATH=$PATH:/mnt/c/Windows/System32
 
