@@ -1,5 +1,5 @@
 [options]
-font = Fira Mono for Powerline 10
+font = Fira Mono for Powerline 11
 allow_bold = true
 #audible_bell = false
 clickable_url = true
@@ -22,7 +22,7 @@ scrollback_lines = 10000
 cursor_blink = on
 
 # "block", "underline" or "ibeam"
-cursor_shape = underline
+cursor_shape = block
 
 # Hide links that are no longer valid in url select overlay mode
 #filter_unmatched_urls = true
@@ -44,7 +44,6 @@ foreground      = #abb2bf
 foreground_bold = #b6bdca
 cursor          = #b6bdca
 background      = #282c34
-background = rgba(63,63,63,0.8)
 
 # 16 color space
 
