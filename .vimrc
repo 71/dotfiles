@@ -10,10 +10,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/denite.nvim'
 Plugin 'bling/vim-airline'
-Plugin 'rakr/vim-one'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'junegunn/vim-easy-align'
+
+Plugin 'rakr/vim-one'
 Plugin 'baabelfish/nvim-nim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'w0rp/ale'
@@ -35,4 +38,5 @@ let g:deoplete#sources#rust#racer_binary=system('which racer')
 let g:deoplete#sources#rust#rust_source_path=system('rustc --print sysroot') + '/lib/rustlib/src/rust/src'
 
 let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
 let g:airline_theme='one'

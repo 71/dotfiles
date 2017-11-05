@@ -9,10 +9,10 @@ fi
 mesg n || true
 
 export PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:/usr/etc/nim/bin:$HOME/termite:$PATH"
-source ~/.cargo/env
+export TERM="xterm-256color"
 
-# OPAM configuration
-. /root/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+# Source config files
+. ~/.cargo/env # Rust / Cargo
+. ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true # OCaml / Opam
+. ~/.z.sh # Z
 
-# Jump around
-. /root/.z.sh
