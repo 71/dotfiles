@@ -19,8 +19,8 @@ prompt pure
 
 # Miscellaneous config:
 export EDITOR='nvim'
-export DISPLAY=:0
 export PATH=$PATH:/mnt/c/Windows/System32
+export DISPLAY=${DISPLAY:=:0}
 
 alias config='/usr/bin/git --git-dir=/root/.cfg/ --work-tree=/root'
 
