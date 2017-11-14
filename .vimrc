@@ -32,6 +32,7 @@ Plugin 'rakr/vim-one'
 Plugin 'baabelfish/nvim-nim'
 Plugin 'sebastianmarkow/deoplete-rust'
 Plugin 'rust-lang/rust.vim'
+Plugin 'zchee/deoplete-jedi'
 
 call vundle#end()
 
@@ -54,9 +55,23 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'one'
 
+call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git', ''])
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--no-heading', '-S'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+
 " Mapping
 nnoremap #  :<C-u>Lista<CR>
 nnoremap g# :<C-u>ListaCursorWord<CR>
+
+nnoremap <leader>ff :<C-u>Denite file_rec<CR>
+nnoremap <leader>bb :<C-u>Denite buffer<CR>
+
+nnoremap <leader>bp :<C-u>bp<CR>
+nnoremap <leader>bn :<C-u>bn<CR>
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
