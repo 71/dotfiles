@@ -8,7 +8,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 # Plugins:
-plugins=(git)
+plugins=(git fast-syntax-highlighting)
 
 # ZSH config:
 source $ZSH/oh-my-zsh.sh
@@ -19,10 +19,10 @@ prompt pure
 
 # Miscellaneous config:
 export EDITOR='nvim'
-export PATH=$PATH:/mnt/c/Windows/System32
-export DISPLAY=${DISPLAY:=:0}
 
 alias config='/usr/bin/git --git-dir=/root/.cfg/ --work-tree=/root'
+alias nv='nvim'
+alias vim='nvim'
 
 source $HOME/.profile
 source $HOME/.machine
