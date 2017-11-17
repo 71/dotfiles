@@ -17,22 +17,24 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'Shougo/denite.nvim'
 Plugin 'Shougo/echodoc.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
-Plugin 'lambdalisue/lista.nvim'
+Plugin 'tpope/vim-dispatch'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'w0rp/ale'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 Plugin 'rakr/vim-one'
 Plugin 'baabelfish/nvim-nim'
 Plugin 'sebastianmarkow/deoplete-rust'
 Plugin 'rust-lang/rust.vim'
 Plugin 'zchee/deoplete-jedi'
+Plugin 'omnisharp/omnisharp-vim'
 
 call vundle#end()
 
@@ -55,20 +57,19 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'one'
 
-call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git', ''])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--no-heading', '-S'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
+let g:OmniSharp_selector_ui = 'fzf'
+let g:OmniSharp_server_type = 'roslyn'
 
 " Mapping
-nnoremap #  :<C-u>Lista<CR>
-nnoremap g# :<C-u>ListaCursorWord<CR>
-
-nnoremap <leader>ff :<C-u>Denite file_rec<CR>
-nnoremap <leader>bb :<C-u>Denite buffer<CR>
+nnoremap <leader>ff :<C-u>GFiles<CR>
+nnoremap <leader>bb :<C-u>Buffers<CR>
+nnoremap <leader>t :<C-u>BTags<CR>
+nnoremap <leader>T :<C-u>Tags<CR>
+nnoremap <leader>h :<C-u>Helptags<CR>
+nnoremap <leader>m :<C-u>Marks<CR>
+nnoremap <leader>f :<C-u>BLines<CR>
+nnoremap <leader>F :<C-u>Lines<CR>
+nnoremap <leader><leader> :<C-u>Commands<CR>
 
 nnoremap <leader>bp :<C-u>bp<CR>
 nnoremap <leader>bn :<C-u>bn<CR>
