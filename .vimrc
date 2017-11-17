@@ -9,6 +9,7 @@ set hidden
 set history=1000
 set mouse=a
 set noshowmode
+set autochdir
 
 set nocompatible
 filetype off
@@ -84,19 +85,21 @@ let g:OmniSharp_server_type = 'roslyn'
 " =====================================================================
 
 " fzf.vim
+nnoremap <leader>FF :<C-u>Files<CR>
 nnoremap <leader>ff :<C-u>GFiles<CR>
 nnoremap <leader>bb :<C-u>Buffers<CR>
 nnoremap <leader>t :<C-u>BTags<CR>
 nnoremap <leader>T :<C-u>Tags<CR>
 nnoremap <leader>h :<C-u>Helptags<CR>
 nnoremap <leader>m :<C-u>Marks<CR>
-nnoremap <leader>f :<C-u>BLines<CR>
-nnoremap <leader>F :<C-u>Lines<CR>
+nnoremap <leader>l :<C-u>BLines<CR>
+nnoremap <leader>L :<C-u>Lines<CR>
 nnoremap <leader>c :<C-u>Commands<CR>
 
 " vim
 nnoremap <leader>bp :<C-u>bp<CR>
 nnoremap <leader>bn :<C-u>bn<CR>
+nnoremap <leader>bd :<C-u>bd<CR>
 
 " ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
