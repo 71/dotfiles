@@ -38,3 +38,5 @@ autoload -Uz _zplugin
 
 # Plugins
 zplugin load zdharma/fast-syntax-highlighting
+
+eval $(thefuck --alias)
