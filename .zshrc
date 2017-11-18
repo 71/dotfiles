@@ -8,7 +8,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 # Plugins:
-plugins=(git fast-syntax-highlighting)
+plugins=(git fast-syntax-highlighting thefuck)
 
 # ZSH config:
 source $ZSH/oh-my-zsh.sh
@@ -30,3 +30,11 @@ source $HOME/.machine
 \cp -rf $SSH_SHARED_DIR $HOME
 chmod 600 $HOME/.ssh/id_rsa
 chmod 600 $HOME/.ssh/id_rsa.pub
+
+### Load zplugin
+source '/root/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+
+# Plugins
+zplugin load zdharma/fast-syntax-highlighting
