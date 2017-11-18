@@ -40,3 +40,5 @@ autoload -Uz _zplugin
 zplugin load zdharma/fast-syntax-highlighting
 
 eval $(thefuck --alias)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
