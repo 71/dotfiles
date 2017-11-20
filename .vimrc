@@ -14,37 +14,33 @@ set autochdir
 set nocompatible
 filetype off
 
-
 " =====================================================================
 " ===  PLUGINS  =======================================================
 " =====================================================================
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'bling/vim-airline'
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/echodoc.vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'easymotion/vim-easymotion'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 
-Plugin 'bling/vim-airline'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'Shougo/echodoc.vim'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'w0rp/ale'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/vim-easy-align'
+Plug 'rakr/vim-one'
+Plug 'sebastianmarkow/deoplete-rust'
+Plug 'rust-lang/rust.vim'
+Plug 'zchee/deoplete-jedi'
+Plug 'omnisharp/omnisharp-vim'
 
-Plugin 'rakr/vim-one'
-Plugin 'sebastianmarkow/deoplete-rust'
-Plugin 'rust-lang/rust.vim'
-Plugin 'zchee/deoplete-jedi'
-Plugin 'omnisharp/omnisharp-vim'
-
-call vundle#end()
+call plug#end()
 
 
 " =====================================================================
