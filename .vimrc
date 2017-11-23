@@ -28,15 +28,21 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'severin-lemaignan/vim-minimap'
+Plug 'danro/rename.vim'
 
 Plug 'rakr/vim-one'
-Plug 'sebastianmarkow/deoplete-rust'
+" Plug 'sebastianmarkow/deoplete-rust'
+Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 Plug 'zchee/deoplete-jedi'
 Plug 'omnisharp/omnisharp-vim'
 
@@ -75,6 +81,9 @@ let g:airline_theme = 'one'
 let g:OmniSharp_selector_ui = 'fzf'
 let g:OmniSharp_server_type = 'roslyn'
 
+" Minimap
+let g:minimap_toggle = '<leader>mm'
+
 
 " =====================================================================
 " ===  MAPPING  =======================================================
@@ -100,6 +109,20 @@ nnoremap <leader>bd :<C-u>bd<CR>
 " ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" EasyMotion / incsearch
+map / <Plug>(incsearch-easymotion-/)
+map ? <Plug>(incsearch-easymotion-?)
+map g/ <Plug>(incsearch-easymotion-stay)
+
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 
 " =====================================================================
