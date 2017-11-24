@@ -40,7 +40,7 @@ Plug 'danro/rename.vim'
 
 Plug 'rakr/vim-one'
 " Plug 'sebastianmarkow/deoplete-rust'
-Plug 'racer-rust/vim-racer'
+" Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'zchee/deoplete-jedi'
@@ -123,6 +123,9 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+" Commentary
+map ; :<C-u>Commentary<CR>
 
 
 " =====================================================================
