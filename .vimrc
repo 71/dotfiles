@@ -24,7 +24,6 @@ Plug 'bling/vim-airline'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/echodoc.vim'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
@@ -37,8 +36,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'danro/rename.vim'
+Plug 'tomtom/tcomment_vim'
 
 Plug 'rakr/vim-one'
+Plug 'rhysd/vim-llvm'
 " Plug 'sebastianmarkow/deoplete-rust'
 " Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
@@ -124,8 +125,8 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
-" Commentary
-map ; :<C-u>Commentary<CR>
+" tcomment
+map ; <Plug>TComment
 
 
 " =====================================================================
