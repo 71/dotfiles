@@ -8,7 +8,11 @@ fi
 
 mesg n || true
 
+# Path setup
 export PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:/usr/etc/nim/bin:$HOME/termite:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+# Environment variables
 export TERM="xterm-256color"
 
 # Source config files
