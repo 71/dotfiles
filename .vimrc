@@ -47,6 +47,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'zchee/deoplete-jedi'
 Plug 'omnisharp/omnisharp-vim'
+Plug 'idris-hackers/idris-vim'
 
 call plug#end()
 
