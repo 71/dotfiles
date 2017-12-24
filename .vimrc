@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
@@ -37,6 +38,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'danro/rename.vim'
 Plug 'tomtom/tcomment_vim'
+Plug 'idanarye/vim-vebugger'
 
 Plug 'rakr/vim-one'
 Plug 'rhysd/vim-llvm'
