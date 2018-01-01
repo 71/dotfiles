@@ -31,6 +31,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -89,6 +90,10 @@ let g:OmniSharp_server_type = 'roslyn'
 
 " Minimap
 let g:minimap_toggle = '<leader>mm'
+
+" ALE
+" let g:ale_linters = { 'rust': ['cargo'] }
+" let g:ale_rust_rls_executable = '~/rls/target/debug/rls'
 
 
 " =====================================================================
