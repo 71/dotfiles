@@ -14,6 +14,7 @@ export PATH="$HOME/termite:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.nimble/bin:/usr/etc/nim/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Environment variables
 export TERM="xterm-256color"
