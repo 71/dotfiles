@@ -52,6 +52,7 @@ Plug 'cespare/vim-toml'
 Plug 'zchee/deoplete-jedi'
 Plug 'omnisharp/omnisharp-vim'
 Plug 'idris-hackers/idris-vim'
+Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }
 
 call plug#end()
 
