@@ -1,5 +1,5 @@
 # Path to my oh-my-zsh installation:
-export ZSH=/root/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Load some default .files:
 setopt EXTENDED_GLOB
@@ -13,16 +13,18 @@ plugins=(git fast-syntax-highlighting thefuck)
 # ZSH config:
 source $ZSH/oh-my-zsh.sh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 PURE_PROMPT_SYMBOL="λ"
-prompt pure
 
 # Miscellaneous config:
 export EDITOR='nvim'
 
 alias config='/usr/bin/git --git-dir=/root/.cfg/ --work-tree=/root'
+alias v='nvim'
 alias nv='nvim'
 alias vim='nvim'
+alias zqsd='setxkbmap sp'
+alias yath='setxkbmap fr'
 
 source $HOME/.profile
 source $HOME/.machine
@@ -38,6 +40,8 @@ autoload -Uz _zplugin
 
 # Plugins
 zplugin load zdharma/fast-syntax-highlighting
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+
 
 eval $(thefuck --alias)
 
