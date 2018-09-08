@@ -1,19 +1,7 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports =
-    let r = builtins.tryEval (
-      let
-        device-name = builtins.readFile /sys/class/dmi/id/product_name;
-        devices =
-          {
-	    "Surface Book" = ./surfacebook.nix;
-          };
-      in builtins.getAttr device-name devices
-    );
-
-    in [ (if r.success then r.value else ./workstation.nix) ]
-  ;
+  imports = [ "/etc/nixos/config/${lib.fileContents /etc/nixos/device}.nix" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -41,27 +29,11 @@
     alias gs='git status'
     alias nv='nvim'
     alias nvc='nvim /etc/nixos/config/entry.nix'
+    alias rootg="git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config"
+    alias userg="git --git-dir=$HOME/.cfg --work-tree=$HOME"
   '';
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
   programs.bash.enableCompletion = true;
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
