@@ -1,0 +1,58 @@
+default  partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+
+    name[Group1]= "Speech-impaired Pirate";
+
+    key <TLDE> {	[   asciitilde,	grave] };
+    key <AE01> {	[	  1,	exclam 		]	};
+    key <AE02> {	[	  2,	less		]	};
+    key <AE03> {	[	  3,	greater	]	};
+    key <AE04> {	[	  4,	slash		]	};
+    key <AE05> {	[	  5,	bar		]	};
+    key <AE06> {	[	  plus,	dollar	]	};
+    key <AE07> {	[	  asterisk,	at	]	};
+    key <AE08> {	[	  6,	asciicircum	]	};
+    key <AE09> {	[	  7,	equal	]	};
+    key <AE10> {	[	  8,	ampersand	]	};
+    key <AE11> {	[   9,	question	]	};
+    key <AE12> {	[   0,	ssharp		]	};
+
+    key <AD01> {	[	  x,	X 		]	};
+    key <AD02> {	[	  y,	Y		]	};
+    key <AD03> {	[	  d,	D		]	};
+    key <AD04> {	[	  comma,	parenleft		]	};
+    key <AD05> {	[	  period,	parenright		]	};
+    key <AD06> {	[	  z,	Z		]	};
+    key <AD07> {	[	  q,	Q		]	};
+    key <AD08> {	[	  m,	M		]	};
+    key <AD09> {	[	  l,	L		]	};
+    key <AD10> {	[	  u,	U		]	};
+    key <AD11> {	[	  braceleft,	bracketleft		]	};
+    key <AD12> {	[ braceright,	bracketright	]	};
+    key <AD13> {	[ percent,	backslash	]	};
+
+    key <AC01> {	[	  a,	A 		]	};
+    key <AC02> {	[	  t,	T		]	};
+    key <AC03> {	[	  h,	H		]	};
+    key <AC04> {	[	  e,	E		]	};
+    key <AC05> {	[	  b,	B		]	};
+    key <AC06> {	[	  minus,	underscore		]	};
+    key <AC07> {	[	  f,	F		]	};
+    key <AC08> {	[	  s,	S		]	};
+    key <AC09> {	[	  n,	N		]	};
+    key <AC10> {	[	  o,	O		]	};
+    key <AC11> {	[   i,	I	  ]	};
+
+    key <AB01> {	[	  p,	P 		]	};
+    key <AB02> {	[	  v,	V		]	};
+    key <AB03> {	[	  g,	G		]	};
+    key <AB04> {	[	  w,	W		]	};
+    key <AB05> {	[	  k,	K		]	};
+    key <AB06> {	[	  j,	J		]	};
+    key <AB07> {	[	  r,	R		]	};
+    key <AB08> {	[   c,	C		]	};
+    key <AB09> {	[   semicolon,	colon		]	};
+    key <AB10> {	[   apostrophe,	quotedbl	]	};
+
+    key <BKSL> {	[ backslash,         bar	]	};
+};
