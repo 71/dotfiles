@@ -18,7 +18,7 @@ filetype off
 " ===  PLUGINS  =======================================================
 " =====================================================================
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'bling/vim-airline'
 Plug 'Shougo/deoplete.nvim'
@@ -43,16 +43,11 @@ Plug 'idanarye/vim-vebugger'
 
 Plug 'rakr/vim-one'
 Plug 'rhysd/vim-llvm'
-" Plug 'sebastianmarkow/deoplete-rust'
-" Plug 'racer-rust/vim-racer'
 Plug 'maralla/completor.vim'
-Plug 'baabelfish/nvim-nim'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'zchee/deoplete-jedi'
-Plug 'omnisharp/omnisharp-vim'
-Plug 'idris-hackers/idris-vim'
-Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }
+Plug 'LnL7/vim-nix'
 
 call plug#end()
 
@@ -65,6 +60,7 @@ filetype plugin indent on
 
 set termguicolors
 set background=dark
+set scrolloff=8
 
 colorscheme one
 
