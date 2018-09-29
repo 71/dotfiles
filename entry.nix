@@ -17,7 +17,7 @@
     gcc
 
     # Misc.
-    alacritty antigen lf git neovim thefuck tmux xclip wget zsh
+    alacritty lf git neovim thefuck tmux xclip wget zsh
   ];
 
 
@@ -30,8 +30,8 @@
     gs   = "git status";
     nv   = "nvim";
     nvc  = "nvim /etc/nixos/config/entry.nix";
-    rcfg = "git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config";
-    ucfg = "git --git-dir=$HOME/.cfg --work-tree=$HOME";
+    rgit = "git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config";
+    ugit = "git --git-dir=$HOME/.cfg --work-tree=$HOME";
 
     nxsw = "nixos-rebuild switch";
   };
@@ -137,36 +137,7 @@
       '';
     };
 
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-
-      interactiveShellInit = ''
-        # Antigen
-        # =======
-
-        source ${pkgs.antigen}/share/antigen/antigen.zsh
-
-        antigen use oh-my-zsh
-
-        antigen bundle fast-syntax-highlighting
-        antigen bundle git
-        antigen bundle git-extras
-        antigen bundle thefuck
-        antigen bundle tmux
-
-        antigen bundle mafredri/zsh-async
-        antigen bundle sindresorhus/pure
-
-        antigen apply
-
-        # Customization
-        # =============
-
-        PURE_PROMPT_SYMBOL="λ"
-        HIST_FIND_NO_DUPS=yes
-      '';
-    };
+    zsh.enable = true;
   };
 
 
