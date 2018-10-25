@@ -33,6 +33,12 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: false
 
+scrolling:
+  history: 1000
+  multiplier: 3
+  faux_multiplier: 3
+  auto_scroll: false
+
 # Display tabs using this many cells (changes require restart)
 tabspaces: 4
 
