@@ -1,3 +1,5 @@
 [user]
 	email = git@gregoirege.is
 	name = Grégoire Geis
+[color]
+	ui = true
