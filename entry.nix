@@ -33,6 +33,7 @@
     rgit = "git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config";
     ugit = "git --git-dir=$HOME/.cfg --work-tree=$HOME";
 
+    ns   = "nix-shell";
     nxsw = "nixos-rebuild switch";
   };
 
@@ -138,6 +139,16 @@
     };
 
     zsh.enable = true;
+  };
+
+
+  # ===========================================================================
+  # == USERS ==================================================================
+  # ===========================================================================
+
+  users.users.greg = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
 
