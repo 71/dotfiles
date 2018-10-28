@@ -3,3 +3,6 @@
 	name = Grégoire Geis
 [color]
 	ui = true
+[status]
+	showUntrackedFiles = no
+
