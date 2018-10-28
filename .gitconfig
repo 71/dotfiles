@@ -12,6 +12,6 @@
   o  = checkout
   ps = push
   pl = pull
-  s  = status -u no
-  su = status -u normal
+  s  = status -uno
+  su = status -unormal
 
