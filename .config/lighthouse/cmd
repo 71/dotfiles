@@ -1,5 +1,0 @@
-#!/nix/store/lw7xaqhakk0i1c631m3cvac3x4lc5gr5-bash-4.4-p12/bin/bash
-
-while read L; do
-  echo "{look! $L|$L}"
-done
