@@ -1,23 +1,17 @@
+# Configuration used on my SSD, which is LUKS-encrypted.
+#
+# It is intended to be portable, but to have a complete
+# desktop environment at the same time.
+
 { config, lib, pkgs, ... }:
 
 {
-  # Import device-specific config first.
-  imports = [ "/etc/nixos/config/${lib.fileContents /etc/nixos/device}.nix" ];
-
-
   # ===========================================================================
   # == PACKAGES ===============================================================
   # ===========================================================================
 
   environment.systemPackages = with pkgs; [
-    # Python & co.
-    (python3.withPackages (pyPkgs: [ pyPkgs.neovim ]))
-
-    # Compilers
-    gcc
-
-    # Misc.
-    alacritty lf git neovim thefuck tmux xclip wget zsh
+    alacritty firefox xclip
   ];
 
 
@@ -25,21 +19,7 @@
   # == ENVIRONMENT ============================================================
   # ===========================================================================
 
-  environment.shellAliases = {
-    g    = "git";
-    gs   = "git status";
-    nv   = "nvim";
-    nvc  = "nvim /etc/nixos/config/entry.nix";
-    rgit = "git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config";
-    ugit = "git --git-dir=$HOME/.cfg --work-tree=$HOME";
-
-    ns   = "nix-shell";
-    nxsw = "nixos-rebuild switch";
-  };
-
   environment.variables = {
-    EDITOR   = "nvim";
-    SHELL    = "zsh";
     TERMINAL = "alacritty";
   };
 
@@ -57,8 +37,12 @@
         i3 = {
           enable = true;
           package = pkgs.i3-gaps;
-          extraPackages = [ (pkgs.polybar.override { i3GapsSupport = true; }) pkgs.rofi ];
+          extraPackages = [
+	    (pkgs.polybar.override { i3GapsSupport = true; })
+	    pkgs.rofi
+	  ];
         };
+
         default = "i3";
       };
     };
@@ -71,7 +55,7 @@
 
   programs = {
     tmux = {
-      enable   = false;
+      enable   = false; # Right now I don't use Tmux.
       clock24  = true;
       keyMode  = "vi";
       shortcut = "a";
@@ -137,8 +121,6 @@
         setw -g window-status-current-format '#[fg=colour235,bg=colour238,nobold,nounderscore,noitalics]⮀#[fg=colour222,bg=colour238] #I ⮁ #W #[fg=colour238,bg=colour235,nobold,nounderscore,noitalics]⮀'
       '';
     };
-
-    zsh.enable = true;
   };
 
 
@@ -178,9 +160,11 @@
   # Misc.
   users.defaultUserShell = pkgs.zsh;
 
-  networking.networkmanager.enable = true;
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
-  # Select internationalisation properties.
+  # Localization
   i18n = {
     consoleFont = "Lat2-Terminus16";
     consoleUseXkbConfig = true;
@@ -190,15 +174,60 @@
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
-  # Use the systemd-boot EFI boot loader.
+
+  # ===========================================================================
+  # == HARDWARE ===============================================================
+  # ===========================================================================
+
+  imports =
+    [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    ];
+
+  # Portable configuration
+  networking.hostName = "Primrose";
+
+  # Clones configuration
+  nesting.clone = [
+    { boot.loader.grub.configurationName = "Workstation";
+      imports = [ ./workstation.nix ];
+    }
+
+    { boot.loader.grub.configurationName = "Surface Book";
+      imports = [ ./surfacebook.nix ];
+    }
+  ];
+
+  # Disk configuration
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  boot.initrd.luks.devices = [
+    { name = "root";
+      device = "/dev/disk/by-uuid/52901570-1b5a-4c97-903d-16ab8ac47bb9";
+      preLVM = true;
+    }
+  ];
 
-  # Only change this if the release notes tell us to do so.
-  system.stateVersion = "18.03";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/d3e07260-0523-45f3-831a-771e3b8a674f";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/DFE2-BFD4";
+      fsType = "vfat";
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/dae97eb3-b738-4d2d-acd1-e6dfce017e42"; }
+    ];
+
+  # Kernel configuration
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "uas" "sd_mod" ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+
+  # Misc configuration
+  nix.maxJobs = lib.mkDefault 4;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }
-
