@@ -3,6 +3,13 @@
 	name = Grégoire Geis
 [color]
 	ui = true
-[status]
-	showUntrackedFiles = no
+[alias]
+  a  = add -u
+  c  = commit
+  cm = commit -m
+  d  = diff
+  o  = checkout
+  ps = push
+  pl = pull
+  s  = status
 
