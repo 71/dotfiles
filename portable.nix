@@ -11,7 +11,7 @@
   # ===========================================================================
 
   environment.systemPackages = with pkgs; [
-    alacritty firefox xclip
+    alacritty firefox thefuck xclip
   ];
 
 
@@ -38,9 +38,9 @@
           enable = true;
           package = pkgs.i3-gaps;
           extraPackages = [
-	    (pkgs.polybar.override { i3GapsSupport = true; })
-	    pkgs.rofi
-	  ];
+            (pkgs.polybar.override { i3GapsSupport = true; })
+            pkgs.rofi
+          ];
         };
 
         default = "i3";
@@ -186,7 +186,7 @@
   # Portable configuration
   networking.hostName = "Primrose";
 
-  # Clones configuration
+  # Clone configurations
   nesting.clone = [
     { boot.loader.grub.configurationName = "Workstation";
       imports = [ ./workstation.nix ];
@@ -205,6 +205,7 @@
     { name = "root";
       device = "/dev/disk/by-uuid/52901570-1b5a-4c97-903d-16ab8ac47bb9";
       preLVM = true;
+      fallbackToPassword = true;
     }
   ];
 

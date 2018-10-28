@@ -4,14 +4,16 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./portable.nix ];
-
   environment.systemPackages = [
     pkgs.xorg.xkbcomp
   ];
 
-  # Use YATH keyboard layout.
-  services.xserver.displayManager.sessionCommands =
-    "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${./misc/yath.xkb} $DISPLAY";
+  services.xserver = {
+    layout = "fr";
+    xkbOptions = "eurosign:e";
+    
+    # Use YATH keyboard layout.
+    displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${./misc/yath.xkb} $DISPLAY";
+  };
 }
 

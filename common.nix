@@ -13,7 +13,7 @@
     (python3.withPackages (pyPkgs: [ pyPkgs.neovim ]))
 
     # Misc.
-    curl lf git neovim wget zsh
+    antibody curl lf git neovim wget zsh
   ];
 
 
@@ -23,14 +23,11 @@
 
   environment.shellAliases = {
     g    = "git";
-    gs   = "git status";
-    gl   = "git pull";
-    gp   = "git push";
     v    = "nvim";
     vc   = "nvim /etc/nixos/config";
 
     groot = "git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config";
-    guser = "git --git-dir=$HOME/.cfg --work-tree=$HOME";
+    guser = "git --git-dir=$HOME/.git --work-tree=$HOME";
 
     ne   = "nix-env";
     nr   = "nix repl";
@@ -61,6 +58,8 @@
   # ===========================================================================
   # == SYSTEM =================================================================
   # ===========================================================================
+
+  security.sudo.wheelNeedsPassword = false;
 
   # Only change this if the release notes tell us to do so.
   system.stateVersion = "18.09";

@@ -4,8 +4,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./portable.nix ];
-
   # Kernel configuration.
   boot.kernelModules = [ "hid-multitouch" ];
   boot.initrd.kernelModules = [ "hid-multitouch" ];
@@ -21,6 +19,7 @@
     linux_4_18 = pkgs.linux_4_18.override {
       kernelPatches =
         # Load all patches in ./patches
+	# Patches are from https://github.com/jakeday/linux-surface
         let files = builtins.attrNames (builtins.readDir ./patches); in
         map
           (x: { patch = "${./patches}/${x}"; name = builtins.replaceStrings [".patch"] [""] x; })
