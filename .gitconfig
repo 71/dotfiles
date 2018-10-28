@@ -5,11 +5,13 @@
 	ui = true
 [alias]
   a  = add -u
+  au = add
   c  = commit
   cm = commit -m
   d  = diff
   o  = checkout
   ps = push
   pl = pull
-  s  = status
+  s  = status -u no
+  su = status -u normal
 
