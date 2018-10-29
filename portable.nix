@@ -33,6 +33,12 @@
       enable = true;
       libinput.enable = true;
 
+      desktopManager = {
+        xterm.enable = false;
+
+        default = "none";
+      };
+
       windowManager = {
         i3 = {
           enable = true;
@@ -185,6 +191,7 @@
 
   # Portable configuration
   networking.hostName = "Primrose";
+  networking.networkmanager.enable = true;
 
   # Clone configurations
   nesting.clone = [
@@ -206,6 +213,9 @@
       device = "/dev/disk/by-uuid/52901570-1b5a-4c97-903d-16ab8ac47bb9";
       preLVM = true;
       fallbackToPassword = true;
+      keyFile = "/dev/disk/by-id/usb-Generic_USB_Flash_Disk-0:0";
+      keyFileOffset = 4025000000;
+      keyFileSize = 4096;
     }
   ];
 
