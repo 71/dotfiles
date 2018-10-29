@@ -8,12 +8,6 @@ accent = #e60053
 [settings]
 screenchange-reload = true
 
-;compositing-background = over
-;compositing-background = screen
-;compositing-foreground = xor
-;compositing-foreground = source
-;compositing-border = over
-
 [global/wm]
 margin-top = 0
 margin-bottom = 0
@@ -21,44 +15,30 @@ margin-bottom = 0
 [bar/top]
 enable-ipc = true
 width = 100%
-height = 40
-;fixed-center = false
-;override-redirect = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
-;background-0 = #333
-;background-1 = #222
-;background-2 = ${self.background-1}
-;background-3 = ${self.background-1}
-;background-4 = ${self.background-1}
-;background-5 = ${self.background-1}
-;background-6 = ${self.background-1}
-;background-7 = #111
 
 line-color = ${colors.linecolor}
 underline-size = 1
 overline-size = 2
 
-;border-size = 5
-;border-color = 0
-;border-bottom-size = 0
 border-bottom-size = 2
 border-bottom-color = ${colors.bordercolor}
 
-padding-left = 0
-padding-right = 2
+padding-right = 1
+padding-top = 1
+padding-bottom = 1
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = dina:pixelsize=30;1
-font-1 = siji:pixelsize=30;1
-font-2 = unifont:size=22;1
+font-0 = dina:pixelsize=16;1
+font-1 = siji:pixelsize=16;1
+font-2 = unifont:size=11;1
 
-modules-left = i3
-modules-center = xwindow
-modules-right = volume wifi battery memory cpu date
+modules-left = mpd xwindow
+modules-center = i3
+modules-right = pulseaudio wifi battery memory cpu date
 
 tray-position = right
 tray-padding = 4
@@ -79,22 +59,6 @@ scroll-down = i3wm-wsprev
 # bar/module specific vars
 bspwm-focused-overline = ${colors.linecolor}
 bspwm-focused-underline = #cc333333
-
-[module/github]
-type = internal/github
-token = ${file:/home/jaagr/.git-token}
-
-;empty-notifications = true
-
-label = %{A1:web --new-window https\://github.com/notifications&:}%notifications%%{A}
-label-padding = 2
-label-background = #f0c209
-label-foreground = #000
-
-[module/fs-root]
-type = internal/fs
-mount-0 = /
-label-mounted = %{F#e60053}%percentage_used%%%{F-} used of %mountpoint%
 
 [module/bspwm]
 type = internal/bspwm
@@ -177,8 +141,6 @@ type = internal/i3
 index-sort = true
 pin-workspaces = true
 wrapping-scroll = true
-;reverse-scroll = false
-;enable-scroll = false
 
 format = <label-state> <label-mode>
 
@@ -264,15 +226,6 @@ date = %Y-%m-%d
 time = %H:%M
 interval = 5
 
-[module/xbacklight]
-type = internal/xbacklight
-format = <ramp> <label>
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = #666
-label-foreground = ${root.foreground}
-
 [module/volume]
 type = internal/volume
 speaker-mixer = Speaker
@@ -335,20 +288,19 @@ animation-charging-framerate = 750
 [module/mpd]
 type = internal/mpd
 
-;format-online = <label-time>  <bar-progress>  <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>
 format-online = <label-time> %{F#88}|%{F-} <label-song> <icon-prev><icon-stop><toggle><icon-next> <icon-repeat><icon-random>
 format-online-spacing = 0
 format-online-background = #ee333333
 format-online-underline = #cc333333
-format-online-padding = 3
+format-online-padding = 1
 
 format-offline = <label-offline>
 format-offline-foreground = #777
 
 label-offline = mpd is off
 
-label-song-maxlen = 45
-label-song-ellipsis = true
+label-song-maxlen = 40
+label-song-ellipsis = false
 
 label-time-foreground = #777
 
@@ -364,84 +316,25 @@ icon-repeat = 
 toggle-on-foreground = ${colors.accent}
 toggle-off-foreground = #777
 
-;bar-progress-width = 10
-;bar-progress-indicator = 
-;bar-progress-indicator-foreground = #bb
-;bar-progress-fill = ─
-;bar-progress-fill-foreground = #bb
-;bar-progress-fill-font = 3
-;bar-progress-empty = ─
-;bar-progress-empty-foreground = #44
-;bar-progress-empty-font = 3
-
-[module/power-menu]
-type = custom/menu
-
-label-open = 
-label-close = 
-label-separator = /
-label-separator-margin = 1
-
-menu-0-0 = Terminate WM
-menu-0-0-foreground = ${colors.accent}
-menu-0-0-exec = bspc quit -1
-menu-0-1 = Reboot
-menu-0-1-foreground = ${colors.accent}
-menu-0-1-exec = menu-open-1
-menu-0-2 = Power off
-menu-0-2-foreground = ${colors.accent}
-menu-0-2-exec = menu-open-2
-menu-0-3 = Lock
-menu-0-3-foreground = ${colors.accent}
-menu-0-3-exec = lockscreen
-
-menu-1-0 = Cancel
-menu-1-0-foreground = ${colors.accent}
-menu-1-0-exec = menu-open-0
-menu-1-1 = Reboot
-menu-1-1-foreground = ${colors.accent}
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = Power off
-menu-2-0-foreground = ${colors.accent}
-menu-2-0-exec = sudo poweroff
-menu-2-1 = Cancel
-menu-2-1-foreground = ${colors.accent}
-menu-2-1-exec = menu-open-0
-
-[module/app-menu]
-type = custom/menu
-label-open = 
-label-close = 
-
-menu-0-0 = Vimperator
-menu-0-0-exec = web
-menu-0-1 = Termite
-menu-0-1-exec = termite
-menu-0-2 = Pcmanfm
-menu-0-2-exec = pcmanfm
-
-[module/xkeyboard]
-type = internal/xkeyboard
-
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = #666
-
-label-layout = %layout%
-
-label-indicator-padding = 2
-label-indicator-background = ${colors.accent}
-
 [module/xwindow]
 type = internal/xwindow
 format = <label>
 label-maxlen = 75
+padding-right = 1
 
-[module/counter]
-type = internal/counter
-format = <counter>
-interval = 0.1
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+
+label-muted =   0%
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+use-ui-max = true
+interval = 5
 
 ; vim:ft=dosini

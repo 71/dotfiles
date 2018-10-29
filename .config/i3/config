@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+a kill
+bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec $HOME/.config/i3/rofi.sh
@@ -42,7 +42,7 @@ bindsym $mod+d exec $HOME/.config/i3/rofi.sh
 exec_always --no-startup-id $HOME/.config/i3/polybar.sh
 
 # gaps
-gaps inner 20
+gaps inner 12
 
 # no borders
 new_window 1pixel
@@ -147,9 +147,10 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
+        # back to normal: Enter Escape Alt+R
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
