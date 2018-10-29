@@ -5,13 +5,14 @@
 
 { config, lib, pkgs, ... }:
 
+let secrets = import ./secrets.nix; in
 {
   # ===========================================================================
   # == PACKAGES ===============================================================
   # ===========================================================================
 
   environment.systemPackages = with pkgs; [
-    alacritty firefox thefuck xclip
+    alacritty firefox ncmpcpp thefuck xclip
   ];
 
 
@@ -51,6 +52,33 @@
 
         default = "i3";
       };
+    };
+
+    mopidy = {
+      enable = true;
+      extensionPackages = [ pkgs.mopidy-spotify pkgs.mopidy-mopify ];
+      configuration = ''
+        [audio]
+        output = pulsesink server=127.0.0.1
+
+        [spotify]
+        enabled = true
+        username = ${secrets.spotify.username}
+        password = ${secrets.spotify.password}
+        client_id = ${secrets.spotify.clientId}
+        client_secret = ${secrets.spotify.clientSecret}
+        bitrate = 320
+
+        [mpd]
+        enabled  = true
+        hostname = 127.0.0.1
+        port = 6600
+
+        [http]
+        enabled  = true
+        hostname = 127.0.0.1
+        port = 6680
+      '';
     };
   };
 
@@ -129,6 +157,16 @@
     };
   };
 
+  hardware = {
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+
+      tcp.enable = true;
+      tcp.anonymousClients.allowedIpRanges = ["127.0.0.1"];
+    };
+  };
+
 
   # ===========================================================================
   # == USERS ==================================================================
@@ -168,7 +206,6 @@
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   # Localization
   i18n = {
@@ -192,6 +229,10 @@
   # Portable configuration
   networking.hostName = "Primrose";
   networking.networkmanager.enable = true;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   # Clone configurations
   nesting.clone = [
