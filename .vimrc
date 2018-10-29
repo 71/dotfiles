@@ -126,6 +126,9 @@ nnoremap <leader>bp :<C-u>bp<CR>
 nnoremap <leader>bn :<C-u>bn<CR>
 nnoremap <leader>bd :<C-u>bd<CR>
 
+" Save current file with sudo using :W
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
 " ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
