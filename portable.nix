@@ -45,7 +45,7 @@ let secrets = import ./secrets.nix; in
           enable = true;
           package = pkgs.i3-gaps;
           extraPackages = [
-            (pkgs.polybar.override { i3GapsSupport = true; })
+            (pkgs.polybar.override { i3GapsSupport = true; mpdSupport = true; pulseSupport = true; })
             pkgs.rofi
           ];
         };
@@ -237,10 +237,12 @@ let secrets = import ./secrets.nix; in
   # Clone configurations
   nesting.clone = [
     { boot.loader.grub.configurationName = "Workstation";
+      environment.variables."DEVICE" = "Workstation";
       imports = [ ./workstation.nix ];
     }
 
-    { boot.loader.grub.configurationName = "Surface Book";
+    { boot.loader.grub.configurationName = "Surface";
+      environment.variables."DEVICE" = "Surface";
       imports = [ ./surfacebook.nix ];
     }
   ];
