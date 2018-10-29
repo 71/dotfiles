@@ -18,8 +18,19 @@ filetype off
 " ===  PLUGINS  =======================================================
 " =====================================================================
 
+" If vim-plug has not been downloaded yet, do it now
+let plug_path = '~/.local/share/nvim/site/autoload/plug.vim'
+
+if empty(glob(plug_path))
+  silent !curl -fLo $plug_path --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source '~/.vimrc'
+endif
+
+" Load all plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Common plugins
 Plug 'bling/vim-airline'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/echodoc.vim'
@@ -40,14 +51,15 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'danro/rename.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'idanarye/vim-vebugger'
-
 Plug 'rakr/vim-one'
-Plug 'rhysd/vim-llvm'
-Plug 'maralla/completor.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'cespare/vim-toml'
-Plug 'zchee/deoplete-jedi'
 Plug 'LnL7/vim-nix'
+Plug 'maralla/completor.vim'
+
+" Optional plugins (depends on computer and/or mood)
+" Plug 'rhysd/vim-llvm'
+" Plug 'rust-lang/rust.vim'
+" Plug 'cespare/vim-toml'
+" Plug 'zchee/deoplete-jedi'
 
 call plug#end()
 
