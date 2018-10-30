@@ -1,7 +1,7 @@
 # Configuration common to every device I have, intended to by light,
 # but to have every tool I use on a daily basis.
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # ===========================================================================
@@ -38,6 +38,10 @@
   environment.variables = {
     EDITOR   = "nvim";
     SHELL    = "zsh";
+  };
+
+  environment.sessionVariables = {
+    NIX_PATH = lib.mkAfter [ "nixpkgs-overlays=/etc/nixos/config/overlays" ];
   };
 
 
