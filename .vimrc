@@ -20,10 +20,11 @@ filetype off
 
 " If vim-plug has not been downloaded yet, do it now
 let plug_path = '~/.local/share/nvim/site/autoload/plug.vim'
+let plug_repo = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 if empty(glob(plug_path))
-  silent !curl -fLo $plug_path --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  execute 'silent !curl -fLo ' . plug_path . ' --create-dirs ' . plug_repo
+
   autocmd VimEnter * PlugInstall | source '~/.vimrc'
 endif
 
@@ -128,6 +129,7 @@ nnoremap <leader>bd :<C-u>bd<CR>
 
 " Save current file with sudo using :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command WQ :execute ':silent w !sudo tee % > /dev/null' | :execute ':silent q'
 
 " ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
