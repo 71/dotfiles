@@ -34,6 +34,9 @@ let secrets = import ./secrets.nix; in
       enable = true;
       libinput.enable = true;
 
+      layout = "fr,us";
+      xkbOptions = "eurosign:e";
+
       desktopManager = {
         xterm.enable = false;
 
@@ -70,14 +73,12 @@ let secrets = import ./secrets.nix; in
         bitrate = 320
 
         [mpd]
-        enabled  = true
+        enabled = true
         hostname = 127.0.0.1
         port = 6600
 
         [http]
-        enabled  = true
-        hostname = 127.0.0.1
-        port = 6680
+        enabled = false
       '';
     };
   };
@@ -237,12 +238,12 @@ let secrets = import ./secrets.nix; in
   # Clone configurations
   nesting.clone = [
     { boot.loader.grub.configurationName = "Workstation";
-      environment.variables."DEVICE" = "Workstation";
+      environment.variables.DEVICE = "Workstation";
       imports = [ ./workstation.nix ];
     }
 
     { boot.loader.grub.configurationName = "Surface";
-      environment.variables."DEVICE" = "Surface";
+      environment.variables.DEVICE = "Surface";
       imports = [ ./surfacebook.nix ];
     }
   ];

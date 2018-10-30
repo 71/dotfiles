@@ -34,9 +34,6 @@
 
   # Use AZERTY layout and adapt to high screen resolution.
   services.xserver = {
-    layout = "fr";
-    xkbOptions = "eurosign:e";
-
     monitorSection = ''
       DisplaySize 396 264
     '';
