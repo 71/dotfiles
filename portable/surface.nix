@@ -19,10 +19,10 @@
     linux_4_18 = pkgs.linux_4_18.override {
       kernelPatches =
         # Load all patches in ./patches
-	# Patches are from https://github.com/jakeday/linux-surface
-        let files = builtins.attrNames (builtins.readDir ./patches); in
+        # Patches are from https://github.com/jakeday/linux-surface
+        let files = builtins.attrNames (builtins.readDir ./surface-patches); in
         map
-          (x: { patch = "${./patches}/${x}"; name = builtins.replaceStrings [".patch"] [""] x; })
+          (x: { patch = "${./surface-patches}/${x}"; name = builtins.replaceStrings [".patch"] [""] x; })
           (builtins.filter (x: null != builtins.match ".+\\.patch" x) files)
         ;
     };
