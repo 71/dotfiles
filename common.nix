@@ -13,7 +13,7 @@
     (python3.withPackages (pyPkgs: [ pyPkgs.neovim ]))
 
     # Misc.
-    antibody curl lf git neovim wget zsh
+    antibody curl fzf lf git neovim wget zsh
   ];
 
 
@@ -25,6 +25,9 @@
     g    = "git";
     v    = "nvim";
     vc   = "nvim /etc/nixos/config";
+
+    # Ensures all aliases after 'sudo' are expanded as well
+    sudo = "sudo ";
 
     groot = "git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config";
     guser = "git --git-dir=$HOME/.git --work-tree=$HOME";

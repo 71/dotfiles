@@ -37,7 +37,8 @@ let secrets = import ../secrets.nix; in
       layout = "fr,us";
       xkbOptions = "eurosign:e";
 
-      autoRepeatInterval = 250;
+      autoRepeatDelay = 250;
+      autoRepeatInterval = 25;
 
       desktopManager = {
         xterm.enable = false;
@@ -57,11 +58,22 @@ let secrets = import ../secrets.nix; in
 
         default = "i3";
       };
+
+      displayManager.lightdm = {
+        background = "${./login-wallpaper.jpg}";
+
+        greeters.gtk = {
+          indicators = ["~a11y" "~language" "~spacer" "~clock" "~power"];
+          extraConfig = ''
+            hide-user-image = true
+          '';
+        };
+      };
     };
 
     mopidy = {
       enable = true;
-      extensionPackages = [ pkgs.mopidy-spotify pkgs.mopidy-mopify ];
+      extensionPackages = [ pkgs.mopidy-spotify ];
       configuration = ''
         [audio]
         output = pulsesink server=127.0.0.1
@@ -183,8 +195,8 @@ let secrets = import ../secrets.nix; in
   ];
 
   environment.shellAliases = {
-    "switch-to-workstation-configuration" = "/run/current-system/fine-tune/child-0/bin/switch-to-configuration";
-    "switch-to-surface-configuration"     = "/run/current-system/fine-tune/child-1/bin/switch-to-configuration";
+    "switch-to-workstation-configuration" = "/run/current-system/fine-tune/child-1/bin/switch-to-configuration";
+    "switch-to-surface-configuration"     = "/run/current-system/fine-tune/child-2/bin/switch-to-configuration";
   };
 
   # Disk configuration

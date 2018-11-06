@@ -16,7 +16,7 @@
 
   services.xserver = {
     # Use YATH keyboard layout.
-    displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${../misc/yath.xkb} $DISPLAY";
+    displayManager.setupCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${../misc/yath.xkb} $DISPLAY";
   };
 }
 
