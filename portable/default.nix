@@ -12,7 +12,7 @@ let secrets = import ../secrets.nix; in
   # ===========================================================================
 
   environment.systemPackages = with pkgs; [
-    alacritty firefox ncmpcpp thefuck xclip
+    alacritty firefox ncmpcpp onboard thefuck xclip
   ];
 
 
@@ -63,9 +63,10 @@ let secrets = import ../secrets.nix; in
         background = "${./login-wallpaper.jpg}";
 
         greeters.gtk = {
-          indicators = ["~a11y" "~language" "~spacer" "~clock" "~power"];
+          indicators = ["~a11y" "~layout" "~spacer" "~clock" "~spacer" "~power"];
           extraConfig = ''
             hide-user-image = true
+            keyboard = ${pkgs.onboard}/bin/onboard
           '';
         };
       };
@@ -195,6 +196,7 @@ let secrets = import ../secrets.nix; in
   ];
 
   environment.shellAliases = {
+    "switch-to-default-configuration"     = "/run/current-system/bin/switch-to-configuration";
     "switch-to-workstation-configuration" = "/run/current-system/fine-tune/child-1/bin/switch-to-configuration";
     "switch-to-surface-configuration"     = "/run/current-system/fine-tune/child-2/bin/switch-to-configuration";
   };
