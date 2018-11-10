@@ -161,3 +161,6 @@ map ; <Plug>TComment
 au FileType cs
   \ setlocal ts=4 sw=4
 
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
