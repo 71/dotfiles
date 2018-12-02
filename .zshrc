@@ -1,6 +1,6 @@
 
-# Antigen
-# =======
+# Antibody
+# ========
 
 source <(antibody init)
 
@@ -16,6 +16,7 @@ antibody bundle denysdovhan/spaceship-prompt
 antibody bundle zsh-users/zsh-autosuggestions
 antibody bundle zsh-users/zsh-completions
 antibody bundle zsh-users/zsh-syntax-highlighting
+
 
 # Customization
 # =============
