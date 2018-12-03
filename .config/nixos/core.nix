@@ -9,11 +9,11 @@
   # ===========================================================================
 
   environment.systemPackages = with pkgs; [
+    # Essential.
+    antibody curl exa fzf git git-crypt man neovim nnn wget zsh
+
     # Python & co.
     (python3.withPackages (pypkgs: [ pypkgs.neovim ]))
-
-    # Misc.
-    antibody curl exa fzf git neovim nnn wget zsh
   ];
 
 
