@@ -16,7 +16,7 @@ For instance:
 
 {
   # Assuming the dotfiles have been cloned in /root:
-  imports = [ /root/.config/nixos/common.nix
+  imports = [ /root/.config/nixos/core.nix
               /root/.config/nixos/portable/default.nix
             ];
 }

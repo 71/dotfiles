@@ -10,10 +10,10 @@
 
   environment.systemPackages = with pkgs; [
     # Python & co.
-    (python3.withPackages (pyPkgs: [ pyPkgs.neovim ]))
+    (python3.withPackages (pypkgs: [ pypkgs.neovim ]))
 
     # Misc.
-    antibody curl fzf lf git neovim wget zsh
+    antibody curl exa fzf git neovim nnn wget zsh
   ];
 
 
@@ -22,15 +22,12 @@
   # ===========================================================================
 
   environment.shellAliases = {
-    g    = "git";
-    v    = "nvim";
-    vc   = "nvim /etc/nixos/config";
-
     # Ensures all aliases after 'sudo' are expanded as well
     sudo = "sudo ";
 
-    groot = "git --git-dir=/etc/nixos/config/.git --work-tree=/etc/nixos/config";
-    guser = "git --git-dir=$HOME/.git --work-tree=$HOME";
+    g    = "git";
+    v    = "nvim";
+    vc   = "nvim /etc/nixos/config";
 
     ne   = "nix-env";
     nr   = "nix repl";
@@ -46,11 +43,6 @@
   environment.sessionVariables = {
     NIX_PATH = lib.mkAfter [ "nixpkgs-overlays=/etc/nixos/config/overlays" ];
   };
-
-
-  # ===========================================================================
-  # == SERVICES ===============================================================
-  # ===========================================================================
 
 
   # ===========================================================================
