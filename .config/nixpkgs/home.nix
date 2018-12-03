@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   nixos = builtins.pathExists /etc/nixos/configuration.nix;
@@ -30,8 +30,13 @@ in
   # Variables
   home.sessionVariables = {
 
-  } // core.environment.variables
-    // core.environment.sessionVariables;
+  } // core.environment.variables;
+
+
+  # Aliases
+  home.file.".aliases".text = lib.concatStrings (
+    lib.mapAttrsToList (k: v: "alias ${k}='${v}'\n") core.environment.shellAliases
+  );
 
   # Git
   programs.git = {
