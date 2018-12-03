@@ -1,9 +1,15 @@
 
+# Some (hopefully temporary) workarounds
+export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
+export ZSH_DISABLE_COMPFIX=true
+
+
 # Antibody
 # ========
 
 source <(antibody init)
 
+antibody bundle robbyrussell/oh-my-zsh
 antibody bundle robbyrussell/oh-my-zsh folder:plugins/git
 antibody bundle robbyrussell/oh-my-zsh folder:plugins/git-extras
 antibody bundle robbyrussell/oh-my-zsh folder:plugins/thefuck
@@ -24,6 +30,7 @@ antibody bundle zsh-users/zsh-syntax-highlighting
 # ZSH options
 #
 setopt HIST_FIND_NO_DUPS
+unsetopt BG_NICE
 
 # Spaceship options
 #
@@ -47,5 +54,6 @@ spaceship_nix_shell() {
 }
 
 SPACESHIP_PROMPT_ORDER=(time user dir host git rust nix_shell exec_time line_sep battery jobs exit_code char)
-SPACESHIP_RPROMPT_ORDER=(vi_mode)
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
