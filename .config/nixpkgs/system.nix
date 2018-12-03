@@ -1,7 +1,5 @@
-{ file ? /etc/nixos/configuration.nix }:
+file:
 
 import <nixpkgs/nixos/lib/eval-config.nix> {
-  modules = [
-    (import file)
-  ];
+  modules = [ import file ];
 }

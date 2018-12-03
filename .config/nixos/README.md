@@ -1,25 +1,23 @@
 Nix config
 ==========
 
-In most cases, I'll use Nix on a portable SSD, either on my desktop
-(`workstation.nix`) or on my Surface Book (`surface.nix`).
+I use Nix as both my OS and my package manager (when I don't have
+root privileges, or on the Windows Subsystem).
 
-This repo should be cloned in `/etc/nixos/config`. Then, different
-files can be imported in `/etc/nixos/configuration.nix`.
+On NixOS, configuration files from this repository can be directly
+imported in `/etc/nixos/configuration.nix`. In most cases, it will be used
+on a portable SSD, either on my desktop (`workstation.nix`) or on my
+Surface Book (`surface.nix`).
 
 For instance:
 ```nix
+# /etc/nixos/configuration.nix
 { config, ... }:
 
 {
-  imports = [ ./config/common.nix ./config/portable/default.nix ];
+  # Assuming the dotfiles have been cloned in /root:
+  imports = [ /root/.config/nixos/common.nix
+              /root/.config/nixos/portable/default.nix
+            ];
 }
 ```
-
-## Portable
-The `portable` configuration lives on an SSD, and may need to change
-depending on the computer on which it runs.
-
-Therefore, it uses `nesting.clone` to allow a different configuration
-to be loaded on boot.
-
