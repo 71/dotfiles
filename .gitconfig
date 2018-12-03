@@ -1,8 +1,8 @@
 [user]
-	email = git@gregoirege.is
-	name = Grégoire Geis
+  email = git@gregoirege.is
+  name = Grégoire Geis
 [color]
-	ui = true
+  ui = true
 [alias]
   a  = add -u
   au = add
