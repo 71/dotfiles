@@ -8,6 +8,9 @@
 --
 
 import XMonad
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.MultiToggle.Instances
+import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 
 import Data.Monoid
@@ -31,7 +34,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 1
+myBorderWidth = 1
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -53,8 +56,8 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#000000"
+myFocusedBorderColor = "#dddddd"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -63,6 +66,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+
+    , ((modm,               xK_f     ), sendMessage $ Toggle FULL)
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
@@ -183,7 +188,10 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = spacing $ tiled ||| Mirror tiled ||| Full
+myLayout = smartBorders
+         $ mkToggle (NOBORDERS ?? FULL ?? EOT)
+         $ spacing
+         $ tiled ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -198,7 +206,7 @@ myLayout = spacing $ tiled ||| Mirror tiled ||| Full
      delta   = 3/100
 
      -- Gaps
-     spacing = spacingRaw True (Border 0 10 10 10) True (Border 10 10 10 10) True
+     spacing = spacingRaw False (Border 10 10 10 10) False (Border 5 5 5 5) True
 
 ------------------------------------------------------------------------
 -- Window rules:
