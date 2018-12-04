@@ -206,7 +206,8 @@ myLayout = smartBorders
      delta   = 3/100
 
      -- Gaps
-     spacing = spacingRaw False (Border 10 10 10 10) False (Border 5 5 5 5) True
+     gap     = 5
+     spacing = spacingRaw False (Border gap 0 0 gap) True (Border 0 gap gap 0) True
 
 ------------------------------------------------------------------------
 -- Window rules:
