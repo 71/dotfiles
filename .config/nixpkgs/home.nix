@@ -32,6 +32,8 @@ in
 {
   # Packages
   home.packages = with pkgs; [
+    powerline-fonts
+
     (ghc.withPackages (hpkgs: with hpkgs; [ xmonad xmonad-contrib ]))
   ] ++ drop core.environment.systemPackages default.environment.systemPackages;
 
@@ -41,11 +43,14 @@ in
       ((trim (x: x.environment.variables) core) // (trim (x: x.environment.sessionVariables) core))
       [ "NIX_PATH" ];
 
-
   # Aliases
   home.file.".aliases".text = lib.concatStrings (
     lib.mapAttrsToList (k: v: "alias ${k}='${v}'\n") core.environment.shellAliases
   );
+
+  # Fonts
+  fonts.fontconfig.enableProfileFonts = true;
+
 
   # Git
   programs.git = {

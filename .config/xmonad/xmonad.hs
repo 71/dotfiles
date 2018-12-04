@@ -8,6 +8,8 @@
 --
 
 import XMonad
+import XMonad.Layout.Spacing
+
 import Data.Monoid
 import System.Exit
 
@@ -17,7 +19,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "xterm"
+myTerminal = "alacritty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -181,7 +183,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = spacing $ tiled ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -194,6 +196,9 @@ myLayout = tiled ||| Mirror tiled ||| Full
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
+
+     -- Gaps
+     spacing = spacingRaw True (Border 0 10 10 10) True (Border 10 10 10 10) True
 
 ------------------------------------------------------------------------
 -- Window rules:
