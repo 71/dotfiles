@@ -14,4 +14,5 @@
   pl = pull
   s  = status -uno
   su = status -unormal
-
+[commit]
+  gpgsign = true
