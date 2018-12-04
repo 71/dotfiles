@@ -1,6 +1,7 @@
 [user]
   email = git@gregoirege.is
   name = Grégoire Geis
+	signingkey = 1E7E8805D7DF804B928FDA3B134C42BAE320E4C9
 [color]
   ui = true
 [alias]
@@ -16,3 +17,5 @@
   su = status -unormal
 [commit]
   gpgsign = true
+[gpg]
+	program = gpg
