@@ -1,36 +1,45 @@
 { config, lib, pkgs, ... }:
 
 let
+  # Properties
   nixos = builtins.pathExists /etc/nixos/configuration.nix;
 
-  # The 'system' function imports a NixOS configuration file
-  # without including all the NixOS default stuff. Therefore
-  # some system packages that are automatically added by
-  # NixOS won't be here, and only the configuration itself
-  # will be returned, without automatic merges.
-  system = x: (import x) {
-    inherit config pkgs;
+  # Utilities
+  system = xs: (import <nixpkgs/nixos/lib/eval-config.nix> {
+    modules = map (x: import x) xs;
+  }).config;
 
-    # mkAfter and all its friends aren't properly resolved since
-    # we're not correctly evaluating the module, therefore we
-    # have to provide a replacement.
-    lib = {
-      mkAfter = x: x;
-    };
-  };
+  drop = origin: toRemove: builtins.filter (x: ! builtins.elem x toRemove) origin;
+  trim = f: sys:
+    let
+      def = f default;
+      totrim = f sys;
 
-  core = system ../nixos/core.nix;
+      triminside = a: b:
+        if builtins.isList a then
+          (map triminside (builtins.filter (x: ! builtins.elem x b)))
+        else if builtins.isAttrs a then
+          (lib.mapAttrs (n: x: triminside x (b.${n})) (removeAttrs a (builtins.attrNames b)))
+        else
+          a;
+    in
+      triminside totrim def;
+
+  # System configurations
+  default = system [];
+  core    = system [ ../nixos/core.nix ];
 in
 {
   # Packages
   home.packages = with pkgs; [
     (ghc.withPackages (hpkgs: with hpkgs; [ xmonad xmonad-contrib ]))
-  ] ++ core.environment.systemPackages;
+  ] ++ drop core.environment.systemPackages default.environment.systemPackages;
 
   # Variables
-  home.sessionVariables = {
-
-  } // core.environment.variables;
+  home.sessionVariables =
+    removeAttrs
+      ((trim (x: x.environment.variables) core) // (trim (x: x.environment.sessionVariables) core))
+      [ "NIX_PATH" ];
 
 
   # Aliases
