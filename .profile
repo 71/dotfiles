@@ -10,3 +10,6 @@ done
 
 # Load aliases
 if [ -e $HOME/.aliases ]; then . $HOME/.aliases; fi
+
+# GPG config
+GPG_TTY=$(tty)
