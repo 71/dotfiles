@@ -71,5 +71,5 @@ in
   };
 
   # Set state version
-  home.stateVersion = core.stateVersion;
+  home.stateVersion = core.system.stateVersion;
 }

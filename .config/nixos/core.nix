@@ -10,10 +10,13 @@
 
   environment.systemPackages = with pkgs; [
     # Essential.
-    antibody curl exa fzf git git-crypt man neovim nnn wget zsh
+    antibody curl exa fzf git man neovim nnn ripgrep wget zsh
+
+    # Git tools
+    git-crypt gitAndTools.grv gitAndTools.diff-so-fancy
 
     # Python & co.
-    (python3.withPackages (pypkgs: [ pypkgs.neovim ]))
+    (python3.withPackages (pypkgs: [ pypkgs.neovim pypkgs.pygments ]))
   ];
 
 
@@ -38,6 +41,13 @@
   environment.variables = {
     EDITOR   = "nvim";
     SHELL    = "zsh";
+
+    FZF_DEFAULT_OPTS = ''
+      --preview '[[ \$(file --mime {}) =~ binary ]] && \
+                    echo {} is a binary file || \
+                    (head -200 {} | pygmentize -s -l \$(pygmentize -N {}))'
+    '';
+    FZF_DEFAULT_COMMAND = "git ls-files || find";
   };
 
   environment.sessionVariables = {
