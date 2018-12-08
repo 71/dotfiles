@@ -9,7 +9,7 @@ do
 done
 
 # Load aliases
-if [ -e $HOME/.aliases ]; then . $HOME/.aliases; fi
+if [ -f $HOME/.aliases ]; then . $HOME/.aliases; fi
 
 # GPG config
-GPG_TTY=$(tty)
+export GPG_TTY=$(tty)

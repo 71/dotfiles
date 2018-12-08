@@ -56,9 +56,10 @@ spaceship_nix_shell() {
 SPACESHIP_PROMPT_ORDER=(time user dir host git rust nix_shell exec_time line_sep battery jobs exit_code char)
 
 # Fzf
-#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Completion
-#
 compdef _gnu_generic exa fzf rg
+
+# Aliases
+[ -f ~/.aliases ] && source ~/.aliases
