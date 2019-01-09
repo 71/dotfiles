@@ -3,6 +3,10 @@ nnoremap <leader>bp :<C-u>bp<CR>
 nnoremap <leader>bn :<C-u>bn<CR>
 nnoremap <leader>bd :<C-u>bd<CR>
 
+" Switch backtick and quote
+noremap ' `
+noremap ` '
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
