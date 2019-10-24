@@ -47,8 +47,6 @@ font:
     x: 0
     y: 0
 
-render_timer: false
-
 colors:
   primary:
     background: '0x282a36'

@@ -36,7 +36,7 @@ font-0 = dina:pixelsize=16;1
 font-1 = siji:pixelsize=16;1
 font-2 = unifont:size=11;1
 
-modules-left = mpd xwindow
+modules-left = xwindow
 modules-center = i3
 modules-right = pulseaudio wifi battery memory cpu date
 

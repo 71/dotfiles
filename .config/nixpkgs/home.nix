@@ -33,8 +33,6 @@ in
   # Packages
   home.packages = with pkgs; [
     powerline-fonts
-
-    (ghc.withPackages (hpkgs: with hpkgs; [ xmonad xmonad-contrib ]))
   ] ++ drop core.environment.systemPackages default.environment.systemPackages;
 
   # Variables
@@ -50,7 +48,6 @@ in
 
   # Fonts
   fonts.fontconfig.enableProfileFonts = true;
-
 
   # Git
   programs.git = {
