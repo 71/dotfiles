@@ -1,0 +1,6 @@
+${3:void }*${2:buf} = malloc($1);
+
+	if (!$2)
+		return 0;
+
+	$0
