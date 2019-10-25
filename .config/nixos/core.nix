@@ -72,7 +72,7 @@ in
   };
 
   environment.sessionVariables = {
-    NIX_PATH = lib.mkAfter [ "nixpkgs-overlays=${./overlays}" ];
+    # NIX_PATH = lib.mkAfter [ "nixpkgs-overlays=${./overlays}" ];
   };
 
 
