@@ -21,6 +21,8 @@
   program = gpg
 [core]
   pager = diff-so-fancy | less -RFX
+  autocrlf = input
+  ignorecase = false
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
