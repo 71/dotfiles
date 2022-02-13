@@ -107,6 +107,7 @@
     { device = "rpool/data/home/g";
       fsType = "zfs";
       options = [ "zfsutil" ];
+      # neededForBoot = true;  # By `agenix`.
     };
 
   fileSystems."/root" =

@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./user-passwords.nix
+  ];
+
   security.sudo.wheelNeedsPassword = true;
 
   users = {
@@ -9,12 +13,9 @@
     users = {
       g = {
         isNormalUser = true;
-        passwordFile = config.age.secrets.password-g.path;
         extraGroups = [ "audio" "networkmanager" "wheel" ];
         shell = pkgs.fish;
       };
-
-      root.passwordFile = config.age.secrets.password-root.path;
     };
   };
 }

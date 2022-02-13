@@ -40,7 +40,7 @@
     g = "git";
     k = "kak";
 
-    ssw = "sudo nixos-rebuild switch --flake /etc/nixos";
+    ssw = "sudo nixos-rebuild switch --flake $HOME/.config/nixos";
     hsw = "home-manager switch --flake $HOME/.config/nixpkgs#$USER";
 
     bo = "broot --conf ${pkgs.writeText "select.toml" ''
