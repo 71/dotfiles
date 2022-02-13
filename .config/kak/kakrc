@@ -1,0 +1,85 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+plug "andreyorst/smarttab.kak" defer expandtab %{
+  set-option global softtabstop 4
+} config %{
+  hook global WinSetOption .* expandtab
+  hook global WinSetOption filetype=(makefile) noexpandtab
+}
+
+plug "occivink/kakoune-sudo-write"
+plug "occivink/kakoune-gdb"
+plug "occivink/kakoune-snippets" subset %{
+  snippets.kak
+  snippets-directory.kak
+}
+
+plug "lePerdu/kakboard" %{
+  hook global WinCreate .* %{ kakboard-enable }
+}
+
+colorscheme selenized-black
+
+set-option global tabstop 2
+set-option global indentwidth 2
+
+set-option global scrolloff 8,12
+
+add-highlighter global/ show-whitespaces -tab » -nbsp · -spc ' ' -lf ' '
+add-highlighter global/ number-lines -relative
+add-highlighter global/ column 80 default,red
+add-highlighter global/ regex '[\t ]+$' 0:default,red
+
+hook global WinSetOption filetype=(c|cpp) %{
+  clang-enable-autocomplete
+  clang-enable-diagnostics
+
+  alias window lint clang-parse
+  alias window lint-next-error clang-diagnostics-next
+
+  set-option window tabstop 4
+  set-option window indentwidth 4
+}
+
+hook global InsertCompletionShow .* %{
+    try %{
+        # this command temporarily removes cursors preceded by whitespace;
+        # if there are no cursors left, it raises an error, does not
+        # continue to execute the mapping commands, and the error is eaten
+        # by the `try` command so no warning appears.
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+    }
+}
+
+hook global InsertCompletionHide .* %{
+    unmap window insert <tab> <c-n>
+    unmap window insert <s-tab> <c-p>
+}
+
+def trim-whitespaces -docstring "Remove trailing whitespace from every line" %{
+   try %{
+        exec -draft '%s\h+$<ret>d'
+        echo -markup "{Information}trimmed"
+    } catch %{
+        echo -markup "{Information}nothing to trim"
+    }
+}
+
+# delete the *scratch* buffer as soon as another is created, but only if it's empty
+hook global BufCreate '^\*scratch\*$' %{
+    exec '%d'
+    hook -once -always global BufCreate '^(?!\*scratch\*).*$' %{
+        try %{
+            # throw if the buffer has more than one character
+            exec -buffer *scratch* 'L<a-K>..<ret>'
+            db *scratch*
+        }
+    }
+}
+
+def kakrc %{ cd ~/.config/kak/; edit kakrc }
+
+map -docstring "go to next placeholder" -- global insert <a-tab> '<c-c>: snippets-select-next-placeholders<ret>'
+map -docstring "go to next placeholder" -- global normal <a-tab> ': snippets-select-next-placeholders<ret>'

@@ -1,0 +1,11 @@
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -pedantic -std=c99 -g -fsanitize=address,undefined
+
+.PHONY: all clean
+
+all: $1
+
+$0
+
+clean:
+	$(RM) $2

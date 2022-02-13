@@ -1,0 +1,8 @@
+#include "$0"
+
+int main(void)
+{
+	printf("");
+
+	return 0;
+}

@@ -1,0 +1,39 @@
+[user]
+  email = opensource@gregoirege.is
+  name = Grégoire Geis
+
+[core]
+  pager = delta
+  autocrlf = input
+  ignorecase = false
+  excludesfile = ~/.config/git/ignore
+
+[init]
+  defaultBranch = master
+
+[alias]
+  a  = add -u
+  au = add
+  c  = commit
+  cm = commit -m
+  d  = diff
+  o  = checkout
+  ps = push
+  pl = pull
+  s  = status -uno
+  su = status -unormal
+
+[color]
+  ui = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
