@@ -51,6 +51,7 @@
       key = "enter"
       leave_broot = true
       execution = ":print_path"
+      apply_to = "file"
     ''}";
   };
 
