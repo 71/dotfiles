@@ -6,7 +6,8 @@ export alias g = ^git-branchless wrap --
 
 # Starship: `starship init nu`.
 
-export alias starship_prompt = ^starship prompt --cmd-duration $env.CMD_DURATION_MS --status $env.LAST_EXIT_CODE
+# Add a leading space for `--status` because negative exit codes break it.
+export alias starship_prompt = ^starship prompt --cmd-duration $env.CMD_DURATION_MS --status $" ($env.LAST_EXIT_CODE)"
 
 
 # Zoxide: `zoxide init nushell --hook prompt`.
