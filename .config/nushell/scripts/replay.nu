@@ -23,7 +23,7 @@ export def play [...args: string] {
 export def diff [new_env: any] {
   $new_env
   | transpose key value
-  | where key not-in $env || value != ($env | get $it.key)
+  | where key not-in $env or value != ($env | get $it.key)
   | transpose -r
   | first
   | reject _ SHLVL

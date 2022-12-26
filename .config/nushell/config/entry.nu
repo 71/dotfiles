@@ -7,7 +7,7 @@ export alias g = ^git-branchless wrap --
 # Starship: `starship init nu`.
 
 # Add a leading space for `--status` because negative exit codes break it.
-export alias starship_prompt = ^starship prompt --cmd-duration $env.CMD_DURATION_MS --status $" ($env.LAST_EXIT_CODE)"
+export alias starship_prompt = ^starship prompt --cmd-duration $env.CMD_DURATION_MS --status ($env.LAST_EXIT_CODE | math abs)
 
 
 # Zoxide: `zoxide init nushell --hook prompt`.
@@ -15,7 +15,7 @@ export alias starship_prompt = ^starship prompt --cmd-duration $env.CMD_DURATION
 export def z [...rest:string] {
   # `z -` does not work yet, see https://github.com/nushell/nushell/issues/4769
   let arg0 = ($rest | append '~').0
-  let path = if (($rest | length) <= 1) && ($arg0 == '-' || ($arg0 | path expand | path type) == dir) {
+  let path = if (($rest | length) <= 1) and ($arg0 == '-' or ($arg0 | path expand | path type) == dir) {
     $arg0
   } else {
     (^zoxide query --exclude $env.PWD -- $rest | str trim -r -c "\n")
