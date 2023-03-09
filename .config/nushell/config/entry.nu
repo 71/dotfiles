@@ -12,24 +12,24 @@ export alias starship_prompt = ^starship prompt --cmd-duration $env.CMD_DURATION
 
 # Zoxide: `zoxide init nushell --hook prompt`.
 
-export def z [...rest:string] {
+export def-env z [...rest:string] {
   # `z -` does not work yet, see https://github.com/nushell/nushell/issues/4769
   let arg0 = ($rest | append '~').0
   let path = if (($rest | length) <= 1) and ($arg0 == '-' or ($arg0 | path expand | path type) == dir) {
     $arg0
   } else {
-    (^zoxide query --exclude $env.PWD -- $rest | str trim -r -c "\n")
+    (zoxide query --exclude $env.PWD -- $rest | str trim -r -c "\n")
   }
   cd $path
 }
 
 # Jump to a directory using interactive search.
-export def zi [...rest:string] {
-  cd $'(^zoxide query -i -- $rest | str trim -r -c "\n")'
+export def-env zi  [...rest:string] {
+  cd $'(zoxide query -i -- $rest | str trim -r -c "\n")'
 }
 
 # Replay.
-export use ../scripts/replay.nu [ replay ]
+export use ../scripts/replay.nu
 
 # Dynamic stuff.
 export use ../.cache/dynamic.nu *
@@ -57,7 +57,7 @@ export-env {
   let-env STARSHIP_SESSION_KEY = (random chars -l 16)
 
   # Zoxide.
-  let-env config = ($env.config | update hooks.pre_prompt ($env.config.hooks.pre_prompt | append {
-    ^zoxide add -- $env.PWD
+  let-env config = ($env.config | update hooks.env_change.PWD ($env.config.hooks.env_change.PWD | append {|_, dir|
+    ^zoxide add -- $dir
   }))
 }

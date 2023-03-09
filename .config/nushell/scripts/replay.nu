@@ -34,6 +34,6 @@ export def diff [new_env: any] {
 #
 # Example:
 #   > replay (ssh-agent)
-export def-env replay [...args: string] {
+export def-env main [...args: string] {
   diff (play $args) | load-env
 }
