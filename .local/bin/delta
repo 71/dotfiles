@@ -1,0 +1,98 @@
+#!/usr/bin/env dotslash
+
+// https://github.com/dandavison/delta/releases/tag/0.18.2
+{
+  "name": "delta",
+  "platforms": {
+    "macos-aarch64": {
+      "size": 2926279,
+      "hash": "blake3",
+      "digest": "906240593a91488ed036652a41b7b6df4852484e5bcd69e3c0a15e63dea66f89",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-aarch64-apple-darwin.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "dandavison/delta",
+          "tag": "0.18.2",
+          "name": "delta-0.18.2-aarch64-apple-darwin.tar.gz"
+        }
+      ],
+      "path": "delta-0.18.2-aarch64-apple-darwin/delta"
+    },
+    "linux-aarch64": {
+      "size": 3040795,
+      "hash": "blake3",
+      "digest": "1a92c45e381d4d1423f21a47277ca477676fc581f66ad85e4ec66ec77647040e",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-aarch64-unknown-linux-gnu.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "dandavison/delta",
+          "tag": "0.18.2",
+          "name": "delta-0.18.2-aarch64-unknown-linux-gnu.tar.gz"
+        }
+      ],
+      "path": "delta-0.18.2-aarch64-unknown-linux-gnu/delta"
+    },
+    "macos-x86_64": {
+      "size": 3039146,
+      "hash": "blake3",
+      "digest": "ebc76b10a1255ee6498cb611c26220218db6252ccfd5b59ec27131da16b4d343",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-apple-darwin.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "dandavison/delta",
+          "tag": "0.18.2",
+          "name": "delta-0.18.2-x86_64-apple-darwin.tar.gz"
+        }
+      ],
+      "path": "delta-0.18.2-x86_64-apple-darwin/delta"
+    },
+    "windows-x86_64": {
+      "size": 3336017,
+      "hash": "blake3",
+      "digest": "31e2d6f18fba5737eab5f178a6e4194a0d69176847f48d22e0c853656a5d444b",
+      "format": "zip",
+      "providers": [
+        {
+          "url": "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-pc-windows-msvc.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "dandavison/delta",
+          "tag": "0.18.2",
+          "name": "delta-0.18.2-x86_64-pc-windows-msvc.zip"
+        }
+      ],
+      "path": "delta-0.18.2-x86_64-pc-windows-msvc/delta.exe"
+    },
+    "linux-x86_64": {
+      "size": 3301354,
+      "hash": "blake3",
+      "digest": "fdd1cd8e8d98a7f2bacc64c2fad07a048ede031be6cd03bde8922d8b8819db07",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-unknown-linux-musl.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "dandavison/delta",
+          "tag": "0.18.2",
+          "name": "delta-0.18.2-x86_64-unknown-linux-musl.tar.gz"
+        }
+      ],
+      "path": "delta-0.18.2-x86_64-unknown-linux-musl/delta"
+    }
+  }
+}

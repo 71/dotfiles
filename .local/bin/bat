@@ -1,0 +1,98 @@
+#!/usr/bin/env dotslash
+
+// https://github.com/sharkdp/bat/releases/tag/v0.25.0
+{
+  "name": "bat",
+  "platforms": {
+    "macos-aarch64": {
+      "size": 2942334,
+      "hash": "blake3",
+      "digest": "0aaf86bdca05733ab2f75cf74456849448fa58e8e428f4cc02f48181e08cc8c2",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-aarch64-apple-darwin.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/bat",
+          "tag": "v0.25.0",
+          "name": "bat-v0.25.0-aarch64-apple-darwin.tar.gz"
+        }
+      ],
+      "path": "bat-v0.25.0-aarch64-apple-darwin/bat"
+    },
+    "linux-aarch64": {
+      "size": 3087818,
+      "hash": "blake3",
+      "digest": "d75595119af198530327f2ea4ef3fed3c0e1d73a4d15aeb3fe4461c4e35855fd",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-aarch64-unknown-linux-musl.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/bat",
+          "tag": "v0.25.0",
+          "name": "bat-v0.25.0-aarch64-unknown-linux-musl.tar.gz"
+        }
+      ],
+      "path": "bat-v0.25.0-aarch64-unknown-linux-musl/bat"
+    },
+    "macos-x86_64": {
+      "size": 3070925,
+      "hash": "blake3",
+      "digest": "2969ce65924d1b97fcb82da90cef69f846db52fe4083d8397e290c24847a2999",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-apple-darwin.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/bat",
+          "tag": "v0.25.0",
+          "name": "bat-v0.25.0-x86_64-apple-darwin.tar.gz"
+        }
+      ],
+      "path": "bat-v0.25.0-x86_64-apple-darwin/bat"
+    },
+    "windows-x86_64": {
+      "size": 3404469,
+      "hash": "blake3",
+      "digest": "a9f660ef718cd8256afcc5ac5398de2ed429d664bdc29da726b0a2033d79bc28",
+      "format": "zip",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-pc-windows-gnu.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/bat",
+          "tag": "v0.25.0",
+          "name": "bat-v0.25.0-x86_64-pc-windows-gnu.zip"
+        }
+      ],
+      "path": "bat-v0.25.0-x86_64-pc-windows-gnu/bat.exe"
+    },
+    "linux-x86_64": {
+      "size": 3275963,
+      "hash": "blake3",
+      "digest": "7df2a4f13bc15af2139f6c3a4ade54c6596bdfe67955a14c7ae3c43c782a3575",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-unknown-linux-musl.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/bat",
+          "tag": "v0.25.0",
+          "name": "bat-v0.25.0-x86_64-unknown-linux-musl.tar.gz"
+        }
+      ],
+      "path": "bat-v0.25.0-x86_64-unknown-linux-musl/bat"
+    }
+  }
+}

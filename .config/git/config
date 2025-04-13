@@ -1,6 +1,16 @@
 [user]
   email = opensource@gregoirege.is
   name = Grégoire Geis
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDNACsLA4kNJ11znbP8sY09ZAkH0AKfCLWg6xP7haKk4
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
 
 [core]
   pager = delta
@@ -9,19 +19,23 @@
   excludesfile = ~/.config/git/ignore
 
 [init]
-  defaultBranch = master
+  defaultBranch = main
 
 [alias]
+  amend = commit --amend
   a  = add -u
   au = add
   c  = commit
   cm = commit -m
+  co = checkout
   d  = diff
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   o  = checkout
   ps = push
+  pf = push --force-with-lease --force-if-includes
   pl = pull
-  s  = status -uno
-  su = status -unormal
+  s  = status -s -uno
+  su = status -s
 
 [color]
   ui = true
@@ -37,3 +51,6 @@
 
 [diff]
   colorMoved = default
+
+[push]
+  autoSetupRemote = true

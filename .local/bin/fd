@@ -1,0 +1,98 @@
+#!/usr/bin/env dotslash
+
+// https://github.com/sharkdp/fd/releases/tag/v10.2.0
+{
+  "name": "fd",
+  "platforms": {
+    "macos-aarch64": {
+      "size": 1220905,
+      "hash": "blake3",
+      "digest": "40f4e51b406baca55370c1eb13e627c4bb0e55972d6e96a419470f19077c3459",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-v10.2.0-aarch64-apple-darwin.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/fd",
+          "tag": "v10.2.0",
+          "name": "fd-v10.2.0-aarch64-apple-darwin.tar.gz"
+        }
+      ],
+      "path": "fd-v10.2.0-aarch64-apple-darwin/fd"
+    },
+    "linux-aarch64": {
+      "size": 1537874,
+      "hash": "blake3",
+      "digest": "0c95cd925704d489bafa00c16d4f7085cc7f659500e2166aaf8263a836b55150",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-v10.2.0-aarch64-unknown-linux-musl.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/fd",
+          "tag": "v10.2.0",
+          "name": "fd-v10.2.0-aarch64-unknown-linux-musl.tar.gz"
+        }
+      ],
+      "path": "fd-v10.2.0-aarch64-unknown-linux-musl/fd"
+    },
+    "macos-x86_64": {
+      "size": 1301191,
+      "hash": "blake3",
+      "digest": "52cdc7113d62b3088a0fb58a7840c7ccf71e9c8a9d0e921c11e44c220babebca",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-v10.2.0-x86_64-apple-darwin.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/fd",
+          "tag": "v10.2.0",
+          "name": "fd-v10.2.0-x86_64-apple-darwin.tar.gz"
+        }
+      ],
+      "path": "fd-v10.2.0-x86_64-apple-darwin/fd"
+    },
+    "windows-x86_64": {
+      "size": 1307369,
+      "hash": "blake3",
+      "digest": "7d80db1032c0dd70d7c36ecae4981e1b0d50b8855b7994d86b087f164172118c",
+      "format": "zip",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-v10.2.0-x86_64-pc-windows-gnu.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/fd",
+          "tag": "v10.2.0",
+          "name": "fd-v10.2.0-x86_64-pc-windows-gnu.zip"
+        }
+      ],
+      "path": "fd-v10.2.0-x86_64-pc-windows-gnu/fd.exe"
+    },
+    "linux-x86_64": {
+      "size": 1681679,
+      "hash": "blake3",
+      "digest": "67cc22c3a887c7cb55dec0f4f91243be0121d65b69ac4127f31abf57009c6760",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-v10.2.0-x86_64-unknown-linux-musl.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "sharkdp/fd",
+          "tag": "v10.2.0",
+          "name": "fd-v10.2.0-x86_64-unknown-linux-musl.tar.gz"
+        }
+      ],
+      "path": "fd-v10.2.0-x86_64-unknown-linux-musl/fd"
+    }
+  }
+}

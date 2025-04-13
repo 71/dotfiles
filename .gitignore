@@ -1,4 +1,7 @@
 /*
+/.local/*
 !/.gitignore
 !/.config/
 !/.config/**
+!/.local/
+!/.local/bin/
