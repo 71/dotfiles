@@ -1,0 +1,98 @@
+#!/usr/bin/env dotslash
+
+// https://github.com/ouch-org/ouch/releases/tag/0.6.1
+{
+  "name": "ouch",
+  "platforms": {
+    "windows-aarch64": {
+      "size": 2366320,
+      "hash": "blake3",
+      "digest": "000de1fc9eb056441a6257d78b2966067fb0f9b65384d2e10ff24b9b93f2a4ec",
+      "format": "zip",
+      "providers": [
+        {
+          "url": "https://github.com/ouch-org/ouch/releases/download/0.6.1/ouch-aarch64-pc-windows-msvc.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "ouch-org/ouch",
+          "tag": "0.6.1",
+          "name": "ouch-aarch64-pc-windows-msvc.zip"
+        }
+      ],
+      "path": "ouch-aarch64-pc-windows-msvc/ouch.exe"
+    },
+    "linux-aarch64": {
+      "size": 2476417,
+      "hash": "blake3",
+      "digest": "926e2b92d03eb8218883e54123d58e57814dabf10ad4324b602b3563bae59d1b",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/ouch-org/ouch/releases/download/0.6.1/ouch-aarch64-unknown-linux-musl.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "ouch-org/ouch",
+          "tag": "0.6.1",
+          "name": "ouch-aarch64-unknown-linux-musl.tar.gz"
+        }
+      ],
+      "path": "ouch-aarch64-unknown-linux-musl/ouch"
+    },
+    "macos-x86_64": {
+      "size": 2431296,
+      "hash": "blake3",
+      "digest": "be705c4af60cead9ed346e8406368efeb727077b80d7d3b3a28fdcbdb33cd487",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/ouch-org/ouch/releases/download/0.6.1/ouch-x86_64-apple-darwin.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "ouch-org/ouch",
+          "tag": "0.6.1",
+          "name": "ouch-x86_64-apple-darwin.tar.gz"
+        }
+      ],
+      "path": "ouch-x86_64-apple-darwin/ouch"
+    },
+    "windows-x86_64": {
+      "size": 2538685,
+      "hash": "blake3",
+      "digest": "464a1a3c2a9ac15aad071a5da163b3a6883e4da60592f11bdd9871d43abe7d5d",
+      "format": "zip",
+      "providers": [
+        {
+          "url": "https://github.com/ouch-org/ouch/releases/download/0.6.1/ouch-x86_64-pc-windows-msvc.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "ouch-org/ouch",
+          "tag": "0.6.1",
+          "name": "ouch-x86_64-pc-windows-msvc.zip"
+        }
+      ],
+      "path": "ouch-x86_64-pc-windows-msvc/ouch.exe"
+    },
+    "linux-x86_64": {
+      "size": 2685568,
+      "hash": "blake3",
+      "digest": "4be6a07d9927cdb95519c886c3f531bd141ab927cb0e7e79dccd40098417720e",
+      "format": "tar.gz",
+      "providers": [
+        {
+          "url": "https://github.com/ouch-org/ouch/releases/download/0.6.1/ouch-x86_64-unknown-linux-musl.tar.gz"
+        },
+        {
+          "type": "github-release",
+          "repo": "ouch-org/ouch",
+          "tag": "0.6.1",
+          "name": "ouch-x86_64-unknown-linux-musl.tar.gz"
+        }
+      ],
+      "path": "ouch-x86_64-unknown-linux-musl/ouch"
+    }
+  }
+}

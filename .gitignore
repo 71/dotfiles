@@ -5,3 +5,6 @@
 !/.config/**
 !/.local/
 !/.local/bin/
+
+# Git ignores ~/.config/git/ignore in this repo (??), so we need to ignore .DS_Store again here.
+.DS_Store

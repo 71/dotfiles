@@ -1,6 +1,6 @@
 set fish_greeting
 
-set PATH ~/.nix-profile/bin ~/.cargo/bin $PATH
+set PATH ~/.nix-profile/bin /nix/var/nix/profiles/default/bin ~/.cargo/bin $PATH
 set EDITOR ~/.nix-profile/bin/hx
 
 if status is-interactive

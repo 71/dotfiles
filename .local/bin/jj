@@ -1,98 +1,98 @@
 #!/usr/bin/env dotslash
 
-// https://github.com/jj-vcs/jj/releases/tag/v0.28.2
+// https://github.com/jj-vcs/jj/releases/tag/v0.30.0
 {
   "name": "jj",
   "platforms": {
     "macos-aarch64": {
-      "size": 10289528,
+      "size": 8379306,
       "hash": "blake3",
-      "digest": "47537aaceda1bd043fd5c5cd9524409f147a4ad0f9ed6fa110be83d5326c8896",
+      "digest": "22f37c1022f6b49b92be994d9febd51c300154bb7a0218baa771376b45f9f433",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/jj-vcs/jj/releases/download/v0.28.2/jj-v0.28.2-aarch64-apple-darwin.tar.gz"
+          "url": "https://github.com/jj-vcs/jj/releases/download/v0.30.0/jj-v0.30.0-aarch64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "jj-vcs/jj",
-          "tag": "v0.28.2",
-          "name": "jj-v0.28.2-aarch64-apple-darwin.tar.gz"
+          "tag": "v0.30.0",
+          "name": "jj-v0.30.0-aarch64-apple-darwin.tar.gz"
         }
       ],
-      "path": "./jj"
+      "path": "jj"
     },
     "linux-aarch64": {
-      "size": 11216326,
+      "size": 8462686,
       "hash": "blake3",
-      "digest": "a4cbe420dd7da5857d737144e122056217b3ec912660b0d3bbb3001c6a990e56",
+      "digest": "2bf4ccf1a9a272d529db1d9ba7fe494c27fcfdcdd0304ef529b84f577c88b7c4",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/jj-vcs/jj/releases/download/v0.28.2/jj-v0.28.2-aarch64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/jj-vcs/jj/releases/download/v0.30.0/jj-v0.30.0-aarch64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "jj-vcs/jj",
-          "tag": "v0.28.2",
-          "name": "jj-v0.28.2-aarch64-unknown-linux-musl.tar.gz"
+          "tag": "v0.30.0",
+          "name": "jj-v0.30.0-aarch64-unknown-linux-musl.tar.gz"
         }
       ],
-      "path": "./jj"
+      "path": "jj"
     },
     "macos-x86_64": {
-      "size": 10429994,
+      "size": 8846111,
       "hash": "blake3",
-      "digest": "4375ce96a83f17a75ab363d9127d9acbfde884a1d20db7117784fed789c8f388",
+      "digest": "d6baf8dc9e9e392c2033391358bf44eab1a9c8f02db308bb8d3a04a86ba96e82",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/jj-vcs/jj/releases/download/v0.28.2/jj-v0.28.2-x86_64-apple-darwin.tar.gz"
+          "url": "https://github.com/jj-vcs/jj/releases/download/v0.30.0/jj-v0.30.0-x86_64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "jj-vcs/jj",
-          "tag": "v0.28.2",
-          "name": "jj-v0.28.2-x86_64-apple-darwin.tar.gz"
+          "tag": "v0.30.0",
+          "name": "jj-v0.30.0-x86_64-apple-darwin.tar.gz"
         }
       ],
-      "path": "./jj"
+      "path": "jj"
     },
     "windows-x86_64": {
-      "size": 8486957,
+      "size": 7952305,
       "hash": "blake3",
-      "digest": "71bc334726594b8ca0477ce245c4a7d7a81ef7ecca6826959f781bd02e2dbf5f",
+      "digest": "6a432301da64243629e3e5ada6122cb8d4b1771adb140b05670786c9e78f3678",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/jj-vcs/jj/releases/download/v0.28.2/jj-v0.28.2-x86_64-pc-windows-msvc.zip"
+          "url": "https://github.com/jj-vcs/jj/releases/download/v0.30.0/jj-v0.30.0-x86_64-pc-windows-msvc.zip"
         },
         {
           "type": "github-release",
           "repo": "jj-vcs/jj",
-          "tag": "v0.28.2",
-          "name": "jj-v0.28.2-x86_64-pc-windows-msvc.zip"
+          "tag": "v0.30.0",
+          "name": "jj-v0.30.0-x86_64-pc-windows-msvc.zip"
         }
       ],
       "path": "jj.exe"
     },
     "linux-x86_64": {
-      "size": 11538592,
+      "size": 9101484,
       "hash": "blake3",
-      "digest": "3020b07f6feff46b1439786d69c5c2e7adeff42357170c4cfde22c82fbec060e",
+      "digest": "8398f2eddaf9443f60e5595614c91c40e42f7bdb64fcc67426b49996e44d536b",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/jj-vcs/jj/releases/download/v0.28.2/jj-v0.28.2-x86_64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/jj-vcs/jj/releases/download/v0.30.0/jj-v0.30.0-x86_64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "jj-vcs/jj",
-          "tag": "v0.28.2",
-          "name": "jj-v0.28.2-x86_64-unknown-linux-musl.tar.gz"
+          "tag": "v0.30.0",
+          "name": "jj-v0.30.0-x86_64-unknown-linux-musl.tar.gz"
         }
       ],
-      "path": "./jj"
+      "path": "jj"
     }
   }
 }

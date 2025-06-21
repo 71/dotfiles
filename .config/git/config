@@ -16,7 +16,6 @@
   pager = delta
   autocrlf = input
   ignorecase = false
-  excludesfile = ~/.config/git/ignore
 
 [init]
   defaultBranch = main

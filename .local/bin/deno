@@ -1,94 +1,94 @@
 #!/usr/bin/env dotslash
 
-// https://github.com/denoland/deno/releases/tag/v2.2.9
+// https://github.com/denoland/deno/releases/tag/v2.3.1
 {
   "name": "deno",
   "platforms": {
     "macos-aarch64": {
-      "size": 37563541,
+      "size": 37796826,
       "hash": "blake3",
-      "digest": "ae43a165ab11bd1290daae476afe0b56b68c82f52abc420cd296fc7e1eb050b7",
+      "digest": "b4dd24ffdb35393c78e6ee2b0d0920c6ef481174a3ed104864c30ee34decaef9",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/denoland/deno/releases/download/v2.2.9/deno-aarch64-apple-darwin.zip"
+          "url": "https://github.com/denoland/deno/releases/download/v2.3.1/deno-aarch64-apple-darwin.zip"
         },
         {
           "type": "github-release",
           "repo": "denoland/deno",
-          "tag": "v2.2.9",
+          "tag": "v2.3.1",
           "name": "deno-aarch64-apple-darwin.zip"
         }
       ],
       "path": "deno"
     },
     "linux-aarch64": {
-      "size": 40024360,
+      "size": 40281130,
       "hash": "blake3",
-      "digest": "bcd72edcddec5f8eb5c3a6a77edde2ceafb3edfe2ad48e089c117bd749e8c6e2",
+      "digest": "efe97d59c0ce6417225b530a68a3d3ad11d6f37013ec9f2daac83a8de63459b9",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/denoland/deno/releases/download/v2.2.9/deno-aarch64-unknown-linux-gnu.zip"
+          "url": "https://github.com/denoland/deno/releases/download/v2.3.1/deno-aarch64-unknown-linux-gnu.zip"
         },
         {
           "type": "github-release",
           "repo": "denoland/deno",
-          "tag": "v2.2.9",
+          "tag": "v2.3.1",
           "name": "deno-aarch64-unknown-linux-gnu.zip"
         }
       ],
       "path": "deno"
     },
     "macos-x86_64": {
-      "size": 40118207,
+      "size": 40375051,
       "hash": "blake3",
-      "digest": "e33da28901da27fb642f49b571f22a5e2ead141ad203535fe4cd9a3cd3150480",
+      "digest": "a5b8907221b541f0b46ce5d99a823f4e9d32b4ac401afd24052d53d3fe9cba13",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/denoland/deno/releases/download/v2.2.9/deno-x86_64-apple-darwin.zip"
+          "url": "https://github.com/denoland/deno/releases/download/v2.3.1/deno-x86_64-apple-darwin.zip"
         },
         {
           "type": "github-release",
           "repo": "denoland/deno",
-          "tag": "v2.2.9",
+          "tag": "v2.3.1",
           "name": "deno-x86_64-apple-darwin.zip"
         }
       ],
       "path": "deno"
     },
     "windows-x86_64": {
-      "size": 41765052,
+      "size": 41966327,
       "hash": "blake3",
-      "digest": "6a35df97dc8a40160091176584b45df98fcad5011c3126e69328ff8d564523fd",
+      "digest": "34d8c92309c41198e342103dc2b76f5acf52113a6137a1ac92533b614e2b814b",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/denoland/deno/releases/download/v2.2.9/deno-x86_64-pc-windows-msvc.zip"
+          "url": "https://github.com/denoland/deno/releases/download/v2.3.1/deno-x86_64-pc-windows-msvc.zip"
         },
         {
           "type": "github-release",
           "repo": "denoland/deno",
-          "tag": "v2.2.9",
+          "tag": "v2.3.1",
           "name": "deno-x86_64-pc-windows-msvc.zip"
         }
       ],
       "path": "deno.exe"
     },
     "linux-x86_64": {
-      "size": 41692698,
+      "size": 41936347,
       "hash": "blake3",
-      "digest": "c4a1d837f567c4c20a28b9de925d023a738aa5c9b5058f213e1bcef3b2841b5c",
+      "digest": "578dd298cbf964cb5cfe23cc41e514a1ecf513a8a5d3141db33cd7fea2427886",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/denoland/deno/releases/download/v2.2.9/deno-x86_64-unknown-linux-gnu.zip"
+          "url": "https://github.com/denoland/deno/releases/download/v2.3.1/deno-x86_64-unknown-linux-gnu.zip"
         },
         {
           "type": "github-release",
           "repo": "denoland/deno",
-          "tag": "v2.2.9",
+          "tag": "v2.3.1",
           "name": "deno-x86_64-unknown-linux-gnu.zip"
         }
       ],
