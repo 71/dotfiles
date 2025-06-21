@@ -3,13 +3,17 @@ name = "Grégoire Geis"
 email = "opensource@gregoirege.is"
 
 [ui]
-default-command = "log"
+default-command = "status"
 conflict-marker-style = "git"
 
 [signing]
+behavior = "drop"
 backend = "ssh"
 key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDNACsLA4kNJ11znbP8sY09ZAkH0AKfCLWg6xP7haKk4"
 backends.ssh.program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[git]
+sign-on-push = true
 
 [aliases]
 # `jj tug` moves the closest bookmark to the closest pushable commit:
