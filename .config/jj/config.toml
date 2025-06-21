@@ -1,0 +1,21 @@
+[user]
+name = "Grégoire Geis"
+email = "opensource@gregoirege.is"
+
+[ui]
+default-command = "log"
+conflict-marker-style = "git"
+
+[signing]
+backend = "ssh"
+key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDNACsLA4kNJ11znbP8sY09ZAkH0AKfCLWg6xP7haKk4"
+backends.ssh.program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[aliases]
+# `jj tug` moves the closest bookmark to the closest pushable commit:
+# https://github.com/jj-vcs/jj/discussions/5568#discussioncomment-13007551
+tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pushable(@)"]
+
+[revset-aliases]
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
