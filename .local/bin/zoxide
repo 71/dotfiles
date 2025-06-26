@@ -1,113 +1,113 @@
 #!/usr/bin/env dotslash
 
-// https://github.com/ajeetdsouza/zoxide/releases/tag/v0.9.7
+// https://github.com/ajeetdsouza/zoxide/releases/tag/v0.9.8
 {
   "name": "zoxide",
   "platforms": {
     "macos-aarch64": {
-      "size": 487895,
+      "size": 480166,
       "hash": "blake3",
-      "digest": "855537826a75e6f5d203bd07c99b40f035463b5b3d0ad0aa228eab5ef3b3d6d0",
+      "digest": "225180129d7d87f7d55eaaf13b065e8ac95123347734e41c01da13ade4b4664f",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.7/zoxide-0.9.7-aarch64-apple-darwin.tar.gz"
+          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-aarch64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "ajeetdsouza/zoxide",
-          "tag": "v0.9.7",
-          "name": "zoxide-0.9.7-aarch64-apple-darwin.tar.gz"
+          "tag": "v0.9.8",
+          "name": "zoxide-0.9.8-aarch64-apple-darwin.tar.gz"
         }
       ],
       "path": "zoxide"
     },
     "windows-aarch64": {
-      "size": 515383,
+      "size": 517253,
       "hash": "blake3",
-      "digest": "05b84e31fa8ac183e3e0300a2f598f4cc025023edcd4bd20d4a95ea61f1cd168",
+      "digest": "d46371821c19e3efcd1dadd3cb0178a5dec585f62d76b17cd0e8da5ff09e099d",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.7/zoxide-0.9.7-aarch64-pc-windows-msvc.zip"
+          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-aarch64-pc-windows-msvc.zip"
         },
         {
           "type": "github-release",
           "repo": "ajeetdsouza/zoxide",
-          "tag": "v0.9.7",
-          "name": "zoxide-0.9.7-aarch64-pc-windows-msvc.zip"
+          "tag": "v0.9.8",
+          "name": "zoxide-0.9.8-aarch64-pc-windows-msvc.zip"
         }
       ],
       "path": "zoxide.exe"
     },
     "linux-aarch64": {
-      "size": 556323,
+      "size": 550032,
       "hash": "blake3",
-      "digest": "a0d98a5ceca604d30e22a410476fc68de82bf89d46dd754185b5fee02a18a195",
+      "digest": "fd3861fa9b55ffa4dc7314465da13e65f02858c45887e4d471ba00adc9cabaee",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.7/zoxide-0.9.7-aarch64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-aarch64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "ajeetdsouza/zoxide",
-          "tag": "v0.9.7",
-          "name": "zoxide-0.9.7-aarch64-unknown-linux-musl.tar.gz"
+          "tag": "v0.9.8",
+          "name": "zoxide-0.9.8-aarch64-unknown-linux-musl.tar.gz"
         }
       ],
       "path": "zoxide"
     },
     "macos-x86_64": {
-      "size": 515625,
+      "size": 506541,
       "hash": "blake3",
-      "digest": "08e0ef74f78a533e549b801aae4703c1b04c34b268ba6387f370d625d4ddba59",
+      "digest": "3dff909817872b7448fabfa35742245fb8b1d7e4bd5ba6f3229cf0610ef7ea7a",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.7/zoxide-0.9.7-x86_64-apple-darwin.tar.gz"
+          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-x86_64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "ajeetdsouza/zoxide",
-          "tag": "v0.9.7",
-          "name": "zoxide-0.9.7-x86_64-apple-darwin.tar.gz"
+          "tag": "v0.9.8",
+          "name": "zoxide-0.9.8-x86_64-apple-darwin.tar.gz"
         }
       ],
       "path": "zoxide"
     },
     "windows-x86_64": {
-      "size": 542965,
+      "size": 547884,
       "hash": "blake3",
-      "digest": "c82c649f42df2c51a24342db421dbd64993f3444854a16deb63dd081f0718e2d",
+      "digest": "1f01be2edbb18e86738548c3dff2d97a0a808bffd742dbfb4f90340fc9394adb",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.7/zoxide-0.9.7-x86_64-pc-windows-msvc.zip"
+          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-x86_64-pc-windows-msvc.zip"
         },
         {
           "type": "github-release",
           "repo": "ajeetdsouza/zoxide",
-          "tag": "v0.9.7",
-          "name": "zoxide-0.9.7-x86_64-pc-windows-msvc.zip"
+          "tag": "v0.9.8",
+          "name": "zoxide-0.9.8-x86_64-pc-windows-msvc.zip"
         }
       ],
       "path": "zoxide.exe"
     },
     "linux-x86_64": {
-      "size": 595655,
+      "size": 586553,
       "hash": "blake3",
-      "digest": "da7c6d597ff9e1a2d575ec14fb80e9b9ce49abe91a9be7fa14d3ce17ab9a637b",
+      "digest": "4be202bd835503893ba42ee3cfc813af09cde93d28acf2f5a12ec06aa8bfade0",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.7/zoxide-0.9.7-x86_64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-x86_64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "ajeetdsouza/zoxide",
-          "tag": "v0.9.7",
-          "name": "zoxide-0.9.7-x86_64-unknown-linux-musl.tar.gz"
+          "tag": "v0.9.8",
+          "name": "zoxide-0.9.8-x86_64-unknown-linux-musl.tar.gz"
         }
       ],
       "path": "zoxide"

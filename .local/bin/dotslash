@@ -1,0 +1,38 @@
+#!/usr/bin/env -S bash -euo pipefail
+
+# This script does exactly what dotslash is supposed to solve: it downloads and caches a binary
+# release of `dotslash` in order to use it without any installation step.
+
+dotslash_version=0.5.4
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/dotslash"
+dotslash_exe="$cache_dir/dotslash-$dotslash_version"
+
+if ! "$dotslash_exe" --version 1>/dev/null 2>/dev/null; then
+  # Download a release from https://github.com/facebook/dotslash/releases.
+  arch="$(uname -m)"
+  arch="${arch/#aarch64/arm64}"
+  suffix="$(test "$(uname -s)" = Linux && echo "linux-musl.$arch" || echo "macos")"
+  url="https://github.com/facebook/dotslash/releases/download/v$dotslash_version/dotslash-$suffix.v$dotslash_version.tar.gz"
+
+  # To avoid race conditions, we must first write to a temporary file, and then rename it
+  # (atomically). File renames are only atomic if performed on the same filesystem, so we
+  # create the temporary file in the cache directory as well.
+  mkdir -p "$cache_dir"
+  
+  # Since we know the target directory and don't want to deal with `mktemp`'s different
+  # behavior on different OSes, we just use $RANDOM.
+  dotslash_exe_tmp="$dotslash_exe-$RANDOM"
+
+  curl --fail --silent --show-error --location "$url" \
+    | tar --extract --gzip --to-stdout dotslash \
+    > "$dotslash_exe_tmp"
+
+  chmod +x "$dotslash_exe_tmp"
+
+  # `-n`: do not overwrite file.
+  mv -n "$dotslash_exe_tmp" "$dotslash_exe" 2>/dev/null \
+    || rm "$dotslash_exe_tmp" 2>/dev/null \
+    || true
+fi
+
+exec "$dotslash_exe" "$@"

@@ -1,76 +1,76 @@
 #!/usr/bin/env dotslash
 
-// https://github.com/atuinsh/atuin/releases/tag/v18.5.0
+// https://github.com/atuinsh/atuin/releases/tag/v18.6.1
 {
   "name": "atuin",
   "platforms": {
     "macos-aarch64": {
-      "size": 12030178,
+      "size": 12077570,
       "hash": "blake3",
-      "digest": "8b5531bc15dc80812cc958e67bb39df88c31aeb2e6163eb35ee4d81e813cee81",
+      "digest": "a315e6530129659fba7ff7502483d745a4102198ecb3ab157e5703a21ed3e771",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/atuinsh/atuin/releases/download/v18.5.0/atuin-aarch64-apple-darwin.tar.gz"
+          "url": "https://github.com/atuinsh/atuin/releases/download/v18.6.1/atuin-aarch64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "atuinsh/atuin",
-          "tag": "v18.5.0",
+          "tag": "v18.6.1",
           "name": "atuin-aarch64-apple-darwin.tar.gz"
         }
       ],
       "path": "atuin-aarch64-apple-darwin/atuin"
     },
     "linux-aarch64": {
-      "size": 13339171,
+      "size": 13432919,
       "hash": "blake3",
-      "digest": "99ee6c666ca59a94eb810182058f7daa92cfb196dcb782cf5842b7c9c71fc6d4",
+      "digest": "416ff1a80d3325fa196133043c9f42dc771f7db5602efe1a27bb819cdfa79208",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/atuinsh/atuin/releases/download/v18.5.0/atuin-aarch64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/atuinsh/atuin/releases/download/v18.6.1/atuin-aarch64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "atuinsh/atuin",
-          "tag": "v18.5.0",
+          "tag": "v18.6.1",
           "name": "atuin-aarch64-unknown-linux-musl.tar.gz"
         }
       ],
       "path": "atuin-aarch64-unknown-linux-musl/atuin"
     },
     "macos-x86_64": {
-      "size": 12679205,
+      "size": 12745104,
       "hash": "blake3",
-      "digest": "e4bb40de9914f955312dbf9ed9d4ab1cbca4bd72754a7ac2a9a8695b71bd31f0",
+      "digest": "f206271cd996155537ea846f3c0803b51a8735b912f8557ad4374bd666a68c9a",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/atuinsh/atuin/releases/download/v18.5.0/atuin-x86_64-apple-darwin.tar.gz"
+          "url": "https://github.com/atuinsh/atuin/releases/download/v18.6.1/atuin-x86_64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "atuinsh/atuin",
-          "tag": "v18.5.0",
+          "tag": "v18.6.1",
           "name": "atuin-x86_64-apple-darwin.tar.gz"
         }
       ],
       "path": "atuin-x86_64-apple-darwin/atuin"
     },
     "linux-x86_64": {
-      "size": 13994340,
+      "size": 14075363,
       "hash": "blake3",
-      "digest": "d3652ba7a3d073f6874aec3d852ab25aed323d27c04a44bb23d70017ea991ee9",
+      "digest": "0c1689229389c5eb1ec6cc339c81bb4b6e33b7e9ebe24c34189325c6edf29827",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/atuinsh/atuin/releases/download/v18.5.0/atuin-x86_64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/atuinsh/atuin/releases/download/v18.6.1/atuin-x86_64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "atuinsh/atuin",
-          "tag": "v18.5.0",
+          "tag": "v18.6.1",
           "name": "atuin-x86_64-unknown-linux-musl.tar.gz"
         }
       ],

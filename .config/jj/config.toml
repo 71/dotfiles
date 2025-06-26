@@ -6,6 +6,9 @@ email = "opensource@gregoirege.is"
 default-command = "status"
 conflict-marker-style = "git"
 
+[snapshot]
+auto-track = "none()"
+
 [signing]
 behavior = "drop"
 backend = "ssh"

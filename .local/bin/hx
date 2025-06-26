@@ -1,0 +1,98 @@
+#!/usr/bin/env dotslash
+
+// https://github.com/helix-editor/helix/releases/tag/25.01.1
+{
+  "name": "hx",
+  "platforms": {
+    "linux-aarch64": {
+      "size": 14015104,
+      "hash": "blake3",
+      "digest": "18a1414aad6a04d9ef7b12fc421d70a4f78397acccebaf8c7a509238229e71b3",
+      "format": "tar.xz",
+      "providers": [
+        {
+          "url": "https://github.com/helix-editor/helix/releases/download/25.01.1/helix-25.01.1-aarch64-linux.tar.xz"
+        },
+        {
+          "type": "github-release",
+          "repo": "helix-editor/helix",
+          "tag": "25.01.1",
+          "name": "helix-25.01.1-aarch64-linux.tar.xz"
+        }
+      ],
+      "path": "helix-25.01.1-aarch64-linux/hx"
+    },
+    "macos-aarch64": {
+      "size": 14878892,
+      "hash": "blake3",
+      "digest": "02dd1a91a97f0d1f52672b092231d6f189d759a937ee6e829e31a3a0e95b762c",
+      "format": "tar.xz",
+      "providers": [
+        {
+          "url": "https://github.com/helix-editor/helix/releases/download/25.01.1/helix-25.01.1-aarch64-macos.tar.xz"
+        },
+        {
+          "type": "github-release",
+          "repo": "helix-editor/helix",
+          "tag": "25.01.1",
+          "name": "helix-25.01.1-aarch64-macos.tar.xz"
+        }
+      ],
+      "path": "helix-25.01.1-aarch64-macos/hx"
+    },
+    "linux-x86_64": {
+      "size": 14942992,
+      "hash": "blake3",
+      "digest": "95ccd94d29cec8a652477c9983fcc2c387e0fd081cd5fc11d4d1899fa01112db",
+      "format": "tar.xz",
+      "providers": [
+        {
+          "url": "https://github.com/helix-editor/helix/releases/download/25.01.1/helix-25.01.1-x86_64-linux.tar.xz"
+        },
+        {
+          "type": "github-release",
+          "repo": "helix-editor/helix",
+          "tag": "25.01.1",
+          "name": "helix-25.01.1-x86_64-linux.tar.xz"
+        }
+      ],
+      "path": "helix-25.01.1-x86_64-linux/hx"
+    },
+    "macos-x86_64": {
+      "size": 14443324,
+      "hash": "blake3",
+      "digest": "9ce05707fbcf1ac7b63327ba53f52657151b12e9fb593999dcf3490163005c7e",
+      "format": "tar.xz",
+      "providers": [
+        {
+          "url": "https://github.com/helix-editor/helix/releases/download/25.01.1/helix-25.01.1-x86_64-macos.tar.xz"
+        },
+        {
+          "type": "github-release",
+          "repo": "helix-editor/helix",
+          "tag": "25.01.1",
+          "name": "helix-25.01.1-x86_64-macos.tar.xz"
+        }
+      ],
+      "path": "helix-25.01.1-x86_64-macos/hx"
+    },
+    "windows-x86_64": {
+      "size": 26210053,
+      "hash": "blake3",
+      "digest": "5034e820da8cf0f0da2917722a5df54c5e42f9776b4524c73e84dd784665b283",
+      "format": "zip",
+      "providers": [
+        {
+          "url": "https://github.com/helix-editor/helix/releases/download/25.01.1/helix-25.01.1-x86_64-windows.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "helix-editor/helix",
+          "tag": "25.01.1",
+          "name": "helix-25.01.1-x86_64-windows.zip"
+        }
+      ],
+      "path": "helix-25.01.1-x86_64-windows/hx.exe"
+    }
+  }
+}

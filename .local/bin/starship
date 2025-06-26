@@ -1,112 +1,112 @@
 #!/usr/bin/env dotslash
 
-// https://github.com/starship/starship/releases/tag/v1.22.1
+// https://github.com/starship/starship/releases/tag/v1.23.0
 {
   "name": "starship",
   "platforms": {
     "macos-aarch64": {
-      "size": 2892538,
+      "size": 3775810,
       "hash": "blake3",
-      "digest": "1bf16f26f5ae8914aec18e1b8b94d79c13186b1dc728b65c5dec3efa73997fd0",
+      "digest": "dc347496eaf91f8a6987d6f4192053e9a5d0fc6000289714df6ce7ca4ce1e7b4",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/starship/starship/releases/download/v1.22.1/starship-aarch64-apple-darwin.tar.gz"
+          "url": "https://github.com/starship/starship/releases/download/v1.23.0/starship-aarch64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "starship/starship",
-          "tag": "v1.22.1",
+          "tag": "v1.23.0",
           "name": "starship-aarch64-apple-darwin.tar.gz"
         }
       ],
       "path": "starship"
     },
     "windows-aarch64": {
-      "size": 3130998,
+      "size": 4053746,
       "hash": "blake3",
-      "digest": "890f16d546631c226a1ecebedb7401befd9a05c7a660fbe53fa38e0c50bc6a4c",
+      "digest": "e6c295b73d0bed0986d88c21b4cc52244ef7ef2bb22c4fe358f74653c2171b5a",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/starship/starship/releases/download/v1.22.1/starship-aarch64-pc-windows-msvc.zip"
+          "url": "https://github.com/starship/starship/releases/download/v1.23.0/starship-aarch64-pc-windows-msvc.zip"
         },
         {
           "type": "github-release",
           "repo": "starship/starship",
-          "tag": "v1.22.1",
+          "tag": "v1.23.0",
           "name": "starship-aarch64-pc-windows-msvc.zip"
         }
       ],
       "path": "starship.exe"
     },
     "linux-aarch64": {
-      "size": 3690064,
+      "size": 4456001,
       "hash": "blake3",
-      "digest": "f15a9f4fbf4aaf1f7360f29701356d155a2bcf5cf4bd66f8b53521da6a6b2143",
+      "digest": "329c99b8add3ed44031e5b0082ff81f349c503de51c971f91383e7f489267fec",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/starship/starship/releases/download/v1.22.1/starship-aarch64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/starship/starship/releases/download/v1.23.0/starship-aarch64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "starship/starship",
-          "tag": "v1.22.1",
+          "tag": "v1.23.0",
           "name": "starship-aarch64-unknown-linux-musl.tar.gz"
         }
       ],
       "path": "starship"
     },
     "macos-x86_64": {
-      "size": 3142693,
+      "size": 4141728,
       "hash": "blake3",
-      "digest": "bacfe2b59690453d477e32b63863d3a296a08d83104eebb3e8c4406e9c9a0b54",
+      "digest": "e6a8e9d04156fef25a8566c075b8525053ddd968302b2ed8b4644a6631b95f30",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/starship/starship/releases/download/v1.22.1/starship-x86_64-apple-darwin.tar.gz"
+          "url": "https://github.com/starship/starship/releases/download/v1.23.0/starship-x86_64-apple-darwin.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "starship/starship",
-          "tag": "v1.22.1",
+          "tag": "v1.23.0",
           "name": "starship-x86_64-apple-darwin.tar.gz"
         }
       ],
       "path": "starship"
     },
     "windows-x86_64": {
-      "size": 3428433,
+      "size": 4371680,
       "hash": "blake3",
-      "digest": "c7bb9c48a271f6f335517762fbc5e0b5e0b152abe3dafd37aaed3f5d1efa3ae7",
+      "digest": "f2f8a269e85e376f0ea78aac03e296e729ca7b2e3678dd39b4c3688263cfd013",
       "format": "zip",
       "providers": [
         {
-          "url": "https://github.com/starship/starship/releases/download/v1.22.1/starship-x86_64-pc-windows-msvc.zip"
+          "url": "https://github.com/starship/starship/releases/download/v1.23.0/starship-x86_64-pc-windows-msvc.zip"
         },
         {
           "type": "github-release",
           "repo": "starship/starship",
-          "tag": "v1.22.1",
+          "tag": "v1.23.0",
           "name": "starship-x86_64-pc-windows-msvc.zip"
         }
       ],
       "path": "starship.exe"
     },
     "linux-x86_64": {
-      "size": 4053920,
+      "size": 4864203,
       "hash": "blake3",
-      "digest": "9c59f1982450acb6a6938860ffe65b0c512b6a581ab4ceba74c1ff7ccce2cfc5",
+      "digest": "2d3f915bccc1a549155aaf21eaa1cd158fe56a838f5b2e1a2daf3f5a7432f025",
       "format": "tar.gz",
       "providers": [
         {
-          "url": "https://github.com/starship/starship/releases/download/v1.22.1/starship-x86_64-unknown-linux-musl.tar.gz"
+          "url": "https://github.com/starship/starship/releases/download/v1.23.0/starship-x86_64-unknown-linux-musl.tar.gz"
         },
         {
           "type": "github-release",
           "repo": "starship/starship",
-          "tag": "v1.22.1",
+          "tag": "v1.23.0",
           "name": "starship-x86_64-unknown-linux-musl.tar.gz"
         }
       ],
